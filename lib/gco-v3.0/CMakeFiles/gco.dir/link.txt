@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgco.a  CMakeFiles/gco.dir/GCoptimization.cpp.o CMakeFiles/gco.dir/LinkedBlockList.cpp.o
+/usr/bin/ranlib libgco.a
