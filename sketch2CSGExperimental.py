@@ -770,18 +770,19 @@ class Union(Expression):
 
 		for idx in range(len(self.exprs)):
 			if len(self.exprs) == 2:
+				strToReturn += 'const myNode' + str(globalIdx) + ' = object.addFuseOperation();\n'
 				strToReturn += myNodeName + '.leftArg.set(' + 'my' + expressionToStringID[
 					self.exprs[0]].capitalize() + ');\n'
 				strToReturn += myNodeName + '.rightArg.set(' + 'my' + expressionToStringID[
 					self.exprs[1]].capitalize() + ');\n'
-				idx += 1
+				break
 			else:
 				if idx < len(self.exprs) - 1:
 					strToReturn += 'const myNode' + str(globalIdx) + '_' + str(
 						idx + 1) + ' = object.addFuseOperation();\n'
 					if idx == 0:
 						strToReturn += 'myNode' + str(globalIdx) + '_' + str(
-							idx + 1) + '.leftArg.set(' + 'my' +expressionToStringID[
+							idx + 1) + '.leftArg.set(' + 'my' + expressionToStringID[
 							               self.exprs[idx]].capitalize() + ');\n'
 					else:
 						strToReturn += 'myNode' + str(globalIdx) + '_' + str(
@@ -895,8 +896,10 @@ class Subtract(Expression):
 		strToReturn = ''
 
 		strToReturn += myNodeName + ' = object.addCutOperation();\n'
-		strToReturn += myNodeName + '.leftArg.set(' + 'node' + str(self.e1) + ');\n'
-		strToReturn += myNodeName + '.rightArg.set(' + 'node' + str(self.e2) + ');\n'
+		strToReturn += myNodeName + '.leftArg.set(' + 'my' + expressionToStringID[
+			self.e1].capitalize() + ');\n'
+		strToReturn += myNodeName + '.rightArg.set(' + 'my' + expressionToStringID[
+			self.e2].capitalize() + ');\n'
 
 		# strToReturn += myNodeName + '.innerRotation.center.set(0,0,0);\n'
 		# strToReturn += myNodeName + '.innerRotation.axis.set(' + rotVec[0] + ',' + rotVec[1]+ ',' + rotVec[2] + ');\n'
