@@ -557,9 +557,9 @@ class Cuboid(Primitive):
 		r = R.from_euler('xyz', [self.euler_angles.x, self.euler_angles.y, self.euler_angles.z], degrees=False)
 		rotVec = r.as_rotvec()
 
-		myNodeName = 'const myNode' + str(globalIdx)
+		myNodeName = 'myNode' + str(globalIdx)
+		strToReturn = 'const '
 		globalIdx += 1
-		strToReturn = ''
 
 		strToReturn += myNodeName + ' = object.addBox();\n'
 		strToReturn += myNodeName + '.point1.set(' + str(self.min_point.x) + ',' + str(self.min_point.y) + ',' + str(
@@ -636,8 +636,8 @@ class Cylinder(Primitive):
 		r = R.from_euler('xyz', [self.euler_angles.x, self.euler_angles.y, self.euler_angles.z], degrees=False)
 		rotVec = r.as_rotvec()
 
-		myNodeName = 'const myNode' + str(globalIdx)
-		strToReturn = ''
+		myNodeName = 'myNode' + str(globalIdx)
+		strToReturn = 'const '
 
 		strToReturn += myNodeName + ' = object.addCylinder();\n'
 		strToReturn += myNodeName + '.point1.set(' + str(self.min_point.x) + ',' + str(self.min_point.y) + ',' + str(
@@ -712,8 +712,8 @@ class Sphere(Primitive):
 		# r = R.from_euler('xyz', [self.euler_angles.x, self.euler_angles.y, self.euler_angles.z], degrees=False)
 		# rotVec = r.as_rotvec()
 
-		myNodeName = 'const myNode' + str(globalIdx)
-		strToReturn = ''
+		myNodeName = 'myNode' + str(globalIdx)
+		strToReturn = 'const '
 
 		strToReturn += myNodeName + ' = object.addSphere();\n'
 		strToReturn += myNodeName + '.center.set(' + str(self.center.x) + ',' + str(self.center.y) + ',' + str(
@@ -765,7 +765,7 @@ class Union(Expression):
 		# r = R.from_euler('xyz', [self.euler_angles.x, self.euler_angles.y, self.euler_angles.z], degrees=False)
 		# rotVec = r.as_rotvec()
 
-		myNodeName = 'const myNode' + str(globalIdx)
+		myNodeName = 'myNode' + str(globalIdx)
 		strToReturn = ''
 
 		for idx in range(len(self.exprs)):
@@ -840,16 +840,13 @@ class Intersection(Expression):
 		# r = R.from_euler('xyz', [self.euler_angles.x, self.euler_angles.y, self.euler_angles.z], degrees=False)
 		# rotVec = r.as_rotvec()
 
-		myNodeName = 'const myNode' + str(globalIdx)
-		strToReturn = ''
+		myNodeName = 'myNode' + str(globalIdx)
+		strToReturn = 'const '
 
 		# ATTENTION => Y A T IL > 2
 
 		if (len(self.exprs) > 2):
-			print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-			print("!!!!!!!!!!!!!!!!!!!! CHANGER LA LOGIQUE DU CODE 2!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-			print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-			print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+			print("erreur")
 
 		strToReturn += myNodeName + ' = object.addCommonOperation();\n'
 		strToReturn += myNodeName + '.leftArg.set(' + 'my' + expressionToStringID[self.exprs[0]].capitalize() + ');\n'
@@ -892,8 +889,8 @@ class Subtract(Expression):
 		# r = R.from_euler('xyz', [self.euler_angles.x, self.euler_angles.y, self.euler_angles.z], degrees=False)
 		# rotVec = r.as_rotvec()
 
-		myNodeName = 'const myNode' + str(globalIdx)
-		strToReturn = ''
+		myNodeName = 'myNode' + str(globalIdx)
+		strToReturn = 'const '
 
 		strToReturn += myNodeName + ' = object.addCutOperation();\n'
 		strToReturn += myNodeName + '.leftArg.set(' + 'my' + expressionToStringID[
