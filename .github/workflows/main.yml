@@ -16,7 +16,8 @@ jobs:
         sudo apt-get update
         sudo apt-get install python3.6
         sudo apt-get install python3-numpy
-        python3 install.py
+        mkdir build
+        python3 install.py build
         #sudo apt-get install build-essential autoconf libtool flex bison mercurial zsh cmake
         # mkdir build
         # cd build 
