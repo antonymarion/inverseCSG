@@ -113,6 +113,8 @@ def InstallEigen():
   helper.PrintWithGreenColor('Installed Eigen')
 
 def InstallJava():
+  helper.Run('sudo apt-get install software-properties-common')
+  helper.Run('sudo apt-get update')
   helper.Run('sudo add-apt-repository -y ppa:webupd8team/java')
   helper.Run('sudo apt-get update')
   helper.Run('sudo apt-get install oracle-java8-installer')
