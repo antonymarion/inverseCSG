@@ -1,0 +1,25 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run a one-line script
+      run: echo Building 
+    - name: Run a multi-line script
+      run: |
+        sudo apt-get update
+        sudo apt-get install python3.6
+        python3 install.py
+        #sudo apt-get install build-essential autoconf libtool flex bison mercurial zsh cmake
+        # mkdir build
+        # cd build 
+        # mkdir cpp
+        # cd cpp 
+        # cmake .
+        #make
