@@ -7,6 +7,8 @@ original README gives the installation instructions.
 
 others give a sample pipeline from a 3D Mesh (off format) into a pure js node-occ script
 
+Some examples files from https://github.com/erossignon/node-STEP/tree/master/parts are included in the example folder for CI tests.
+
 Others papers+code freely available online:
 
 * https://www.sciencedirect.com/science/article/pii/S0010448516000038
