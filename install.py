@@ -115,9 +115,8 @@ def InstallEigen():
 def InstallJava():
   helper.Run('sudo apt-get install software-properties-common')
   helper.Run('sudo apt-get update')
-  helper.Run('sudo add-apt-repository -y ppa:webupd8team/java')
-  helper.Run('sudo apt-get update')
-  helper.Run('sudo apt-get install oracle-java8-installer')
+  helper.Run('wget https://launchpad.net/~webupd8team/+archive/ubuntu/java/+build/14261480/+files/oracle-java8-installer_8u161-1~webupd8~0_all.deb')
+  helper.Run('dpkg -i oracle-java8-installer_8u161-1~webupd8~0_all.deb')
   # Currently JAVA_HOME is hard coded.
   java_home = '/usr/lib/jvm/java-8-oracle/' 
   env_variables['JAVA_HOME'] = os.environ['JAVA_HOME'] = java_home
