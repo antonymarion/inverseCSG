@@ -28,7 +28,7 @@ jobs:
         python3 install.py build
     - name: configure
       run: |
-        sudo cd /home/runner/work/inverseCSG/inverseCSG/sketch-backend
+        cd /home/runner/work/inverseCSG/inverseCSG/sketch-backend
         sudo ./configure
 #     - name: manually building 
 #       continue-on-error: true
