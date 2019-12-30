@@ -237,8 +237,8 @@ helper.Run('sudo hg clone -r 04b3403 sketch-backend-default sketch-backend')
 sketch_backend_folder = os.path.join(sketch_folder, 'sketch-backend')
 env_variables['CSG_SKETCH_BACKEND'] = sketch_backend_folder
 os.chdir(sketch_backend_folder)
-helper.Run('bash autogen.sh')
-helper.Run('./configure')
+helper.Run('sudo bash autogen.sh')
+helper.Run('sudo ./configure')
 helper.Run('sudo make -j2')
 # Interestingly, I need to manually do the following copy and paste work to
 # avoid an error in sketch-frontend.
