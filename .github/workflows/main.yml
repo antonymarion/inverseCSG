@@ -47,9 +47,9 @@ jobs:
         sudo cmake cpp/
         sudo make
         cd /home/runner/work/inverseCSG/inverseCSG/
-        sudo apt-get install zypper
-        sudo zypper install -t pattern "devel_C_C++" "devel_java"
-        sudo zypper install java-1_6_0-openjdk-devel mercurial
+        #sudo apt-get install zypper
+        #sudo zypper install -t pattern "devel_C_C++" "devel_java"
+        #sudo zypper install java-1_6_0-openjdk-devel mercurial
         hg clone https://bitbucket.org/gatoatigrado/sketch-backend
         hg clone https://bitbucket.org/gatoatigrado/sketch-frontend
         cd sketch-backend
