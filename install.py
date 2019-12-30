@@ -120,11 +120,12 @@ def InstallJava():
   #helper.Run('sudo apt-get install zypper')
   #helper.Run('sudo zypper install java-1_6_0-openjdk-devel mercurial')
   # Currently JAVA_HOME is hard coded.
-  java_home = '/usr/lib/jvm/java-8-oracle/' 
+  #java_home = '/usr/lib/jvm/java-8-oracle/' 
+  java_home = '/usr/lib/jvm/java-1.8.0-openjdk-amd64/' 
   env_variables['JAVA_HOME'] = os.environ['JAVA_HOME'] = java_home
   path = os.path.join(java_home, 'bin') + ':' + os.environ['PATH']
   env_variables['PATH'] = os.environ['PATH'] = path
-  helper.Run('%s -version' % os.path.join(java_home, 'bin', 'javac'))
+  helper.Run('%s -version' % os.path.join(java_home, 'bin', 'java'))
 
 def InstallMaven():
   maven_url = 'http://mirrors.koehn.com/apache/maven/maven-3/3.5.3/' \
@@ -172,18 +173,20 @@ exit_code = helper.Run('sudo apt-get install gcc-8 g++-8 -y', None)
 if exit_code != 0:
   # This works for Ubuntu 14.04.
   helper.Run('sudo apt-get update')
-  helper.Run('sudo apt-get install build-essential software-properties-common -y')
+  helper.Run('sudo apt-get install build-essential ' \
+    'software-properties-common -y')
   helper.Run('sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y')
   helper.Run('sudo apt-get update')
   helper.Run('sudo apt-get install gcc-snapshot -y')
   helper.Run('sudo apt-get update')
   helper.Run('sudo apt-get install gcc-8 g++-8 -y')
-  helper.Run('sudo apt install python3-pip')
-  helper.Run('sudo apt-get install autoconf libtool flex bison mercurial zsh cmake')
+  helper.Run('sudo apt-get install autoconf libtool flex bison '
+    'mercurial zsh cmake')
 
 # Install python dependencies.
-helper.Run('sudo python3 -m pip install numpy scipy matplotlib ipython jupyter pandas sympy nose')
-helper.Run('sudo python3 -m pip install -U scikit-learn')
+helper.Run('sudo python -m pip install numpy scipy matplotlib ipython '
+           'jupyter pandas sympy nose')
+helper.Run('sudo pip install -U scikit-learn')
 
 # Install CGAL.
 InstallCGAL()
