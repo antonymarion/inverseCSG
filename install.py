@@ -85,7 +85,7 @@ def CheckSketch():
   return True
 
 def InstallCGAL():
-  helper.Run('sudo apt-get install libcgal-dev')
+  helper.Run('sudo apt-get install libcgal-dev -y')
   cgal_url = 'https://github.com/CGAL/cgal/releases/download/' \
              'releases%2FCGAL-4.12/CGAL-4.12.zip'
   cgal_file = os.path.join(build_folder, 'cgal.zip')
