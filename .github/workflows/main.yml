@@ -4,19 +4,17 @@ on: [push]
 
 jobs:
   build:
+
+    runs-on: ${{ matrix.os }}
     
     strategy:
       fail-fast: false
       matrix:
         os: [ubuntu-16.04, ubuntu-18.04]
-        name: LINUX ${{ matrix.os }}
-      
-    runs-on: ${{ matrix.os }}
 
     steps:
       - uses: actions/checkout@v1
       - name: using python install.py script
-        uses: actions/setup-node@v1
         continue-on-error: true
         with:
           os-version: ${{ matrix.os }}
