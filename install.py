@@ -126,6 +126,7 @@ def InstallMaven():
   helper.RunWithStdout('sudo unzip -q %s -d %s' % (maven_file, build_folder))
   os.remove(maven_file)
   # ls build dir after maven unzip
+  print('build_folder: %s' % (build_folder))
   helper.RunWithStdout('ls %s' % (build_folder))
   # Add it to the environment variable.
   for folder_name in os.listdir(build_folder):
@@ -135,6 +136,8 @@ def InstallMaven():
                             = maven_loc + ':' + os.environ['PATH']
   # Display maven_loc
   print('maven_loc: %s' % (maven_loc))
+  # updat env var.
+  helper.RunWithStdout('sudo source ~/.bashrc')
   # Check maven.
   helper.RunWithStdout('sudo mvn -v')
 
