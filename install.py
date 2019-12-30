@@ -123,16 +123,20 @@ def InstallMaven():
   maven_url = 'https://mirrors.koehn.com/apache/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.zip'
   maven_file = os.path.join(build_folder, 'maven.zip')
   urllib.request.urlretrieve(maven_url, maven_file)
-  helper.Run('sudo unzip -q %s -d %s' % (maven_file, build_folder))
+  helper.RunWithStdout('sudo unzip -q %s -d %s' % (maven_file, build_folder))
   os.remove(maven_file)
+  # ls build dir after maven unzip
+  helper.RunWithStdout('ls %s' % (build_folder))
   # Add it to the environment variable.
   for folder_name in os.listdir(build_folder):
     if 'maven' in folder_name:
       maven_loc = os.path.join(build_folder, folder_name, 'bin')
       env_variables['PATH'] = os.environ['PATH'] \
                             = maven_loc + ':' + os.environ['PATH']
+  # Display maven_loc
+  print('maven_loc: %s' % (maven_loc))
   # Check maven.
-  helper.Run('sudo mvn -v')
+  helper.RunWithStdout('sudo mvn -v')
 
 ################################################################################
 # Variables.
