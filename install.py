@@ -195,7 +195,7 @@ os.environ['CC'] = '/usr/bin/gcc-8'
 os.environ['CXX'] = '/usr/bin/g++-8'
 helper.Run('sudo cmake -DCGAL_DIR=%s %s' % (env_variables['CGAL_DIR'], \
                                        os.path.join(root_folder, 'cpp')))
-helper.Run('sudo make -s')
+helper.Run('sudo make -w -s --no-print-directory')
 helper.PrintWithGreenColor('C++ program compiled successfully.')
 env_variables['CSG_CPP_EXE'] = os.path.join(cpp_build_folder,
                                             'csg_cpp_command')
@@ -232,7 +232,7 @@ os.chdir(sketch_backend_folder)
 helper.Run('sudo bash autogen.sh')
 helper.Run('sudo chmod 777 configure')
 helper.Run('./configure')
-helper.Run('sudo make -j2 -s')
+helper.Run('sudo make -j2 -w -s --no-print-directory')
 # Interestingly, I need to manually do the following copy and paste work to
 # avoid an error in sketch-frontend.
 sketch_solver_folder = os.path.join(sketch_backend_folder, 'src/SketchSolver')
@@ -250,7 +250,7 @@ helper.Run('sudo hg clone -r 42c057c sketch-frontend-default sketch-frontend')
 sketch_frontend_folder = os.path.join(sketch_folder, 'sketch-frontend')
 env_variables['CSG_SKETCH_FRONTEND'] = sketch_frontend_folder
 os.chdir(sketch_frontend_folder)
-helper.Run('sudo make system-install DESTDIR=/usr/bin SUDOINSTALL=1 -s')
+helper.Run('sudo make system-install DESTDIR=/usr/bin SUDOINSTALL=1 -w --no-print-directory -s')
 
 # Now check Sketch again.
 if not CheckSketch():
