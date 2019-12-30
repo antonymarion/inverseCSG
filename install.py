@@ -180,13 +180,14 @@ if exit_code != 0:
   helper.Run('sudo apt-get install gcc-snapshot -y')
   helper.Run('sudo apt-get update')
   helper.Run('sudo apt-get install gcc-8 g++-8 -y')
+  helper.Run('sudo apt install python3-pip')
   helper.Run('sudo apt-get install autoconf libtool flex bison '
     'mercurial zsh cmake')
 
 # Install python dependencies.
-helper.Run('sudo python -m pip install numpy scipy matplotlib ipython '
+helper.Run('sudo python3 -m pip install numpy scipy matplotlib ipython '
            'jupyter pandas sympy nose')
-helper.Run('sudo pip install -U scikit-learn')
+helper.Run('sudo python3 -m pip install -U scikit-learn')
 
 # Install CGAL.
 InstallCGAL()
