@@ -117,8 +117,8 @@ def InstallJava():
   helper.Run('sudo apt-get update')
   #helper.Run('wget https://launchpad.net/~webupd8team/+archive/ubuntu/java/+build/14261480/+files/oracle-java8-installer_8u161-1~webupd8~0_all.deb')
   #helper.Run('dpkg -i oracle-java8-installer_8u161-1~webupd8~0_all.deb')
-  helper.Run('sudo apt-get install zypper')
-  helper.Run('sudo zypper install java-1_6_0-openjdk-devel mercurial')
+  #helper.Run('sudo apt-get install zypper')
+  #helper.Run('sudo zypper install java-1_6_0-openjdk-devel mercurial')
   # Currently JAVA_HOME is hard coded.
   java_home = '/usr/lib/jvm/java-8-oracle/' 
   env_variables['JAVA_HOME'] = os.environ['JAVA_HOME'] = java_home
