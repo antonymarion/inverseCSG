@@ -29,6 +29,7 @@ def Run(command, exception_handle=DefaultExceptionHandle):
   print('Command finished in %f seconds.' % time_intvl)
   exit_code = ret_val >> 8
   if exit_code != 0 and exception_handle is not None:
+    os.system('ls')
     exception_handle(command, exit_code)
   return exit_code
 

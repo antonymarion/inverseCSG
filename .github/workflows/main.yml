@@ -28,6 +28,7 @@ jobs:
         python3 install.py build
     - name: configure
       run: |
+        ls
         cd /home/runner/work/inverseCSG/inverseCSG/sketch-backend
         sudo ./configure
 #     - name: manually building 
