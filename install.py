@@ -132,12 +132,12 @@ def InstallMaven():
   for folder_name in os.listdir(build_folder):
     if 'maven' in folder_name:
       maven_loc = os.path.join(build_folder, folder_name, 'bin')
+      # Display maven_loc
+      print('maven_loc: %s' % (maven_loc))
       env_variables['PATH'] = os.environ['PATH'] \
                             = maven_loc + ':' + os.environ['PATH']
-  # Display maven_loc
-  print('maven_loc: %s' % (maven_loc))
-  # updat env var.
-  helper.RunWithStdout('sudo source ~/.bashrc')
+      print('env_PATH_variables: %s' % (env_variables['PATH']))
+
   # Check maven.
   helper.RunWithStdout('sudo mvn -v')
 
