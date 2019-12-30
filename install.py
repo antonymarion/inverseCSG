@@ -183,9 +183,9 @@ if exit_code != 0:
     'mercurial zsh cmake')
 
 # Install python dependencies.
-helper.Run('sudo python -m pip install numpy scipy matplotlib ipython '
+helper.Run('sudo python3 -m pip install numpy scipy matplotlib ipython '
            'jupyter pandas sympy nose')
-helper.Run('sudo pip install -U scikit-learn')
+helper.Run('sudo python3 -m pip install -U scikit-learn')
 
 # Install CGAL.
 InstallCGAL()
