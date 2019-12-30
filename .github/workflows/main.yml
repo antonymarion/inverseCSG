@@ -14,10 +14,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - name: using python install.py script
+      - name: install and test on ${{ matrix.os }
         continue-on-error: true
-        with:
-          os-version: ${{ matrix.os }}
       - run: |
           sudo apt-get update
           sudo add-apt-repository ppa:fkrull/deadsnakes
