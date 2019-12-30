@@ -1,4 +1,4 @@
-name: test matrix 
+name: CI
 on: push
 jobs:
   build:
@@ -18,9 +18,23 @@ jobs:
           LINKER: gcc
     steps:
      - uses: actions/checkout@v1
-     - run: |
+     - name: installAndTest 16
+       if: runner.os == 'ubuntu-16.04'
+       run: |
           sudo apt-get update	
           sudo add-apt-repository ppa:fkrull/deadsnakes	
+          sudo apt-get update	
+          sudo apt-get install -y python3.6	
+          sudo apt-get install python3-setuptools	
+          sudo apt-get install -y python3-pip	
+          sudo python3 -m pip install --upgrade pip	
+          sudo apt-get install python3-numpy	
+          sudo apt-get install libcgal-qt5-dev	
+          mkdir -p build	
+          python3 install.py build
+     - name: installAndTest 18
+       if: runner.os == 'ubuntu-18.04'
+       run: |
           sudo apt-get update	
           sudo apt-get install -y python3.6	
           sudo apt-get install python3-setuptools	
