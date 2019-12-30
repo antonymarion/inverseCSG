@@ -43,7 +43,7 @@ jobs:
         ls
         cd Mesh_2/
         ls
-        cd /home/runner/work/inverseCSG/inverseCSG/build
+        cd /home/runner/work/inverseCSG/inverseCSG
         sudo cmake cpp/
         sudo make
         cd /home/runner/work/inverseCSG/inverseCSG/
