@@ -128,8 +128,7 @@ def InstallJava():
   helper.Run('%s -version' % os.path.join(java_home, 'bin', 'java'))
 
 def InstallMaven():
-  maven_url = 'http://mirrors.koehn.com/apache/maven/maven-3/3.5.3/' \
-              'binaries/apache-maven-3.5.3-bin.zip'
+  maven_url = 'https://mirrors.koehn.com/apache/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.zip'
   maven_file = os.path.join(build_folder, 'maven.zip')
   urllib.request.urlretrieve(maven_url, maven_file)
   helper.Run('sudo unzip -q %s -d %s' % (maven_file, build_folder))
