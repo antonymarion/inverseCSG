@@ -96,7 +96,7 @@ def InstallCGAL():
   # Add cgal_root to the environment variable list.
   env_variables['CGAL_DIR'] = os.environ['CGAL_DIR'] = cgal_dir
 #   helper.Run('sudo cp '+cgal_dir+'/lib/* /usr/lib')
-  helper.Run('sudo ls /usr/lib/libC*')
+#   helper.Run('sudo ls /usr/lib/libC*')
   helper.PrintWithGreenColor('Installed libcgal-dev')
 
 def InstallEigen():

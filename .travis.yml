@@ -1,20 +1,23 @@
 language: c++
-dist: trusty
+
 matrix:
   include:
   - dist: bionic
     compiler: gcc
     os: linux
     sudo: required
+    env:
+      - TRAVIS_DIST_NAME="bionic"
   - dist: xenial
     compiler: gcc
     os: linux
     sudo: required
-
+    env:
+      - TRAVIS_DIST_NAME="xenial"
 
 before_install:
   - sudo apt-get update
-  - sudo add-apt-repository ppa:fkrull/deadsnakes -y
+  - if [[ ( "$TRAVIS_DIST_NAME" == "xenial" ) ]]; then sudo add-apt-repository ppa:fkrull/deadsnakes -y; fi
   - sudo apt-get update
   - sudo apt-get install -y python3.6
   - sudo apt-get install python3-setuptools
@@ -26,7 +29,7 @@ before_install:
 script:
   - python3 install.py build
   - after_success:
-#  - .travis/push.sh
+#  - bash push.sh
 env:
   global:
     secure: 
