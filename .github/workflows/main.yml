@@ -21,6 +21,7 @@ jobs:
         sudo add-apt-repository ppa:fkrull/deadsnakes
         sudo apt-get update
         sudo apt-get install -y python3.6
+        sudo apt-get install python3-setuptools
         sudo apt-get install -y python3-pip
         sudo python3 -m pip install --upgrade pip
         sudo apt-get install python3-numpy
