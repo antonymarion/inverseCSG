@@ -131,7 +131,7 @@ def InstallMaven():
               'binaries/apache-maven-3.5.3-bin.zip'
   maven_file = os.path.join(build_folder, 'maven.zip')
   urllib.request.urlretrieve(maven_url, maven_file)
-  helper.Run('unzip -q %s -d %s' % (maven_file, build_folder))
+  helper.Run('sudo unzip -q %s -d %s' % (maven_file, build_folder))
   os.remove(maven_file)
   # Add it to the environment variable.
   for folder_name in os.listdir(build_folder):
@@ -140,7 +140,7 @@ def InstallMaven():
       env_variables['PATH'] = os.environ['PATH'] \
                             = maven_loc + ':' + os.environ['PATH']
   # Check maven.
-  helper.Run('mvn -v')
+  helper.Run('sudo mvn -v')
 
 ################################################################################
 # Variables.
@@ -183,9 +183,9 @@ if exit_code != 0:
     'mercurial zsh cmake')
 
 # Install python dependencies.
-helper.Run('python -m pip install numpy scipy matplotlib ipython '
+helper.Run('sudo python -m pip install numpy scipy matplotlib ipython '
            'jupyter pandas sympy nose')
-helper.Run('pip install -U scikit-learn')
+helper.Run('sudo pip install -U scikit-learn')
 
 # Install CGAL.
 InstallCGAL()
@@ -200,9 +200,9 @@ if not os.path.exists(cpp_build_folder):
 os.chdir(cpp_build_folder)
 os.environ['CC'] = '/usr/bin/gcc-8'
 os.environ['CXX'] = '/usr/bin/g++-8'
-helper.Run('cmake -DCGAL_DIR=%s %s' % (env_variables['CGAL_DIR'], \
+helper.Run('sudo cmake -DCGAL_DIR=%s %s' % (env_variables['CGAL_DIR'], \
                                        os.path.join(root_folder, 'cpp')))
-helper.Run('make')
+helper.Run('sudo make')
 helper.PrintWithGreenColor('C++ program compiled successfully.')
 env_variables['CSG_CPP_EXE'] = os.path.join(cpp_build_folder,
                                             'csg_cpp_command')
@@ -229,16 +229,16 @@ if not os.path.exists(sketch_folder):
   os.makedirs(sketch_folder)
 # Sketch-backend.
 os.chdir(sketch_folder)
-helper.Run('hg clone https://bitbucket.org/gatoatigrado/sketch-backend')
-helper.Run('mv sketch-backend sketch-backend-default')
+helper.Run('sudo hg clone https://bitbucket.org/gatoatigrado/sketch-backend')
+helper.Run('sudo mv sketch-backend sketch-backend-default')
 # Use this version of sketch.
-helper.Run('hg clone -r 04b3403 sketch-backend-default sketch-backend')
+helper.Run('sudo hg clone -r 04b3403 sketch-backend-default sketch-backend')
 sketch_backend_folder = os.path.join(sketch_folder, 'sketch-backend')
 env_variables['CSG_SKETCH_BACKEND'] = sketch_backend_folder
 os.chdir(sketch_backend_folder)
 helper.Run('bash autogen.sh')
 helper.Run('./configure')
-helper.Run('make -j2')
+helper.Run('sudo make -j2')
 # Interestingly, I need to manually do the following copy and paste work to
 # avoid an error in sketch-frontend.
 sketch_solver_folder = os.path.join(sketch_backend_folder, 'src/SketchSolver')
@@ -249,10 +249,10 @@ shutil.copyfile(os.path.join(sketch_solver_folder, 'cegis'), \
 
 # Download sketch-frontend.
 os.chdir(sketch_folder)
-helper.Run('hg clone https://bitbucket.org/gatoatigrado/sketch-frontend')
-helper.Run('mv sketch-frontend sketch-frontend-default')
+helper.Run('sudo hg clone https://bitbucket.org/gatoatigrado/sketch-frontend')
+helper.Run('sudo mv sketch-frontend sketch-frontend-default')
 # Use this version of sketch.
-helper.Run('hg clone -r 42c057c sketch-frontend-default sketch-frontend')
+helper.Run('sudo hg clone -r 42c057c sketch-frontend-default sketch-frontend')
 sketch_frontend_folder = os.path.join(sketch_folder, 'sketch-frontend')
 env_variables['CSG_SKETCH_FRONTEND'] = sketch_frontend_folder
 os.chdir(sketch_frontend_folder)
