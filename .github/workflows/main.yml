@@ -32,6 +32,8 @@ jobs:
         sudo apt-get install gcc-6 g++-6 -y
         sudo apt-get install gcc-8 g++-8 -y
         sudo apt-get install build-essential autoconf libtool flex bison mercurial zsh cmake -y
+        sudo python3 -m pip install numpy scipy matplotlib ipython jupyter pandas sympy nose
+        sudo python3 -m pip install -U scikit-learn
         cd build/
         ls
         cd CGAL-4.12/
@@ -47,8 +49,6 @@ jobs:
         sudo apt-get install zypper
         sudo zypper install -t pattern "devel_C_C++" "devel_java"
         sudo zypper install java-1_6_0-openjdk-devel mercurial
-        sudo aptitude install build-essential autoconf libtool flex bison mercurial zsh
-        sudo apt install build-essential autoconf libtool flex bison mercurial zsh
         hg clone https://bitbucket.org/gatoatigrado/sketch-backend
         hg clone https://bitbucket.org/gatoatigrado/sketch-frontend
         cd sketch-backend
