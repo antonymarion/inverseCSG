@@ -2,7 +2,7 @@ language: c++
 dist: trusty
 matrix:
   include:
-  - dist: trusty
+  - dist: bionic
     compiler: gcc
     os: linux
     sudo: required
