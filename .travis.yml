@@ -28,8 +28,8 @@ before_install:
   - mkdir -p build
 script:
   - python3 install.py build
-stage: Test examples files
-  script: sudo python3 run_all.py
+# stage: Test examples files
+#   script: sudo python3 run_all.py
 #   - after_success:
 #     - bash push.sh
 env:
