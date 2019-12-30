@@ -4,24 +4,61 @@ on: [push]
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    
+    strategy:
+      fail-fast: false
+      
+    runs-on: ubuntu-16.04
 
     steps:
     - uses: actions/checkout@v1
     - name: Run a one-line script
-      run: echo Building 
-    - name: Run a multi-line script
+      run: echo Building invereCSG Code
+    - name: using python install.py script
+      continue-on-error: true
       run: |
         sudo apt-get update
+        sudo add-apt-repository ppa:fkrull/deadsnakes
+        sudo apt-get update
         sudo apt-get install python3.6
+        sudo pip install --upgrade pip
         sudo apt-get install python3-numpy
-        mkdir build
+        mkdir -p build
         python3 install.py build
-        #sudo apt-get install build-essential autoconf libtool flex bison mercurial zsh cmake
-        # mkdir build
-        # cd build 
-        # mkdir cpp
-        # cd cpp 
-        # cmake .
-        #make
+    - name: manually building 
+      continue-on-error: true
+      run: |
+        sudo apt-get install gcc-6 g++-6 -y
+        sudo apt-get install gcc-8 g++-8 -y
+        sudo apt-get install build-essential autoconf libtool flex bison mercurial zsh cmake -y
+        cd build/
+        ls
+        cd CGAL-4.12/
+        ls
+        cd demo/
+        ls
+        cd Mesh_2/
+        ls
+        cd /home/runner/work/inverseCSG/inverseCSG/build
+        cmake cpp/
+        make
+        cd /home/runner/work/inverseCSG/inverseCSG/
+        sudo apt-get install zypper
+        sudo zypper install -t pattern "devel_C_C++" "devel_java"
+        sudo zypper install java-1_6_0-openjdk-devel mercurial
+        sudo aptitude install build-essential autoconf libtool flex bison mercurial zsh
+        sudo apt install build-essential autoconf libtool flex bison mercurial zsh
+        hg clone https://bitbucket.org/gatoatigrado/sketch-backend
+        hg clone https://bitbucket.org/gatoatigrado/sketch-frontend
+        cd sketch-backend
+        bash autogen.sh
+        ./configure
+        make -j2
+        cd ../sketch-frontend
+        make system-install DESTDIR=/usr/bin SUDOINSTALL=1
+        apt-get install mvn
+        sudo apt-get install mvn
+        sudo apt-get install maven
+        make system-install DESTDIR=/usr/bin SUDOINSTALL=1
+        cd /home/runner/work/inverseCSG/inverseCSG/
+        python3 run_tests.py build/ one_cube
