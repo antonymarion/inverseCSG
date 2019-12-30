@@ -239,7 +239,7 @@ env_variables['CSG_SKETCH_BACKEND'] = sketch_backend_folder
 os.chdir(sketch_backend_folder)
 helper.Run('sudo bash autogen.sh')
 helper.Run('sudo chmod 777 configure')
-helper.Run('sudo ./configure')
+helper.Run('./configure')
 helper.Run('sudo make -j2')
 # Interestingly, I need to manually do the following copy and paste work to
 # avoid an error in sketch-frontend.
