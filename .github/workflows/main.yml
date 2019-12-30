@@ -21,6 +21,7 @@ jobs:
         sudo add-apt-repository ppa:fkrull/deadsnakes
         sudo apt-get update
         sudo apt-get install python3.6
+        sudo pip install --upgrade pip
         sudo apt-get install python3-numpy
         mkdir -p build
         python3 install.py build
@@ -33,23 +34,20 @@ jobs:
         ls
         cd build/
         mkdir -p cpp
-        cmake 
         cd ..
         cmake build/cpp/
         cd build/
         ls
-        CGAL-4.12/
         cd CGAL-4.12/
         ls
-        ./demo/
         cd demo/
         ls
         cd Mesh_2/
         ls
-        cd ..
+        cd /home/runner/work/inverseCSG/inverseCSG/build
         cmake cpp/
         make
-        python3 run_tests.py build/ one_cube
+        cd /home/runner/work/inverseCSG/inverseCSG/
         sudo apt-get install zypper
         sudo zypper install -t pattern "devel_C_C++" "devel_java"
         sudo zypper install java-1_6_0-openjdk-devel mercurial
@@ -67,3 +65,5 @@ jobs:
         sudo apt-get install mvn
         sudo apt-get install maven
         make system-install DESTDIR=/usr/bin SUDOINSTALL=1
+        cd /home/runner/work/inverseCSG/inverseCSG/
+        python3 run_tests.py build/ one_cube
