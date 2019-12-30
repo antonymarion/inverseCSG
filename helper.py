@@ -24,7 +24,7 @@ def Run(command, exception_handle=DefaultExceptionHandle):
   print('Running the following command:')
   PrintWithGreenColor(command)
   time_start = time.time()
-  ret_val = os.system(command)
+  ret_val = os.system(command +'> /dev/null')
   time_intvl = time.time() - time_start
   print('Command finished in %f seconds.' % time_intvl)
   exit_code = ret_val >> 8
