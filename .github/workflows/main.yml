@@ -26,11 +26,6 @@ jobs:
         sudo apt-get install libcgal-qt5-dev
         mkdir -p build
         python3 install.py build
-    - name: configure
-      run: |
-        ls
-        cd /home/runner/work/inverseCSG/inverseCSG/sketch-backend
-        sudo ./configure
 #     - name: manually building 
 #       continue-on-error: true
 #       run: |
