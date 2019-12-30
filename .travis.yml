@@ -1,0 +1,18 @@
+before_install:
+  - sudo apt-get update
+  - sudo add-apt-repository ppa:fkrull/deadsnakes
+  - sudo apt-get update
+  - sudo apt-get install -y python3.6
+  - sudo apt-get install python3-setuptools
+  - sudo apt-get install -y python3-pip
+  - sudo python3 -m pip install --upgrade pip
+  - sudo apt-get install python3-numpy
+  - sudo apt-get install libcgal-qt5-dev
+  - mkdir -p build
+script:
+  - python3 install.py build
+  - after_success:
+#  - .travis/push.sh
+env:
+  global:
+    secure: 
