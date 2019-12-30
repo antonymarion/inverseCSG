@@ -71,16 +71,10 @@ def CheckSketch():
   readline.parse_and_bind('tab: complete')
   readline.set_completer(AutoComplete)
   while 'CSG_SKETCH_FRONTEND' not in env_variables:
-    sketch_frontend_folder = input('Tell us the location of sketch-frontend: ') 
-    if not os.path.exists(sketch_frontend_folder):
-      print('Folder does not exist. Please try again.')
-      continue
+    sketch_frontend_folder = '/home/runner/work/inverseCSG/inverseCSG/sketch-frontend'
     env_variables['CSG_SKETCH_FRONTEND'] = sketch_frontend_folder
   while 'CSG_SKETCH_BACKEND' not in env_variables:
-    sketch_backend_folder = input('Tell us the location of sketch-backend: ') 
-    if not os.path.exists(sketch_backend_folder):
-      print('Folder does not exist. Please try again.')
-      continue
+    sketch_backend_folder = '/home/runner/work/inverseCSG/inverseCSG/sketch-backend'
     env_variables['CSG_SKETCH_BACKEND'] = sketch_backend_folder
   return True
 
