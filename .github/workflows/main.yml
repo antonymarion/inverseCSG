@@ -40,8 +40,8 @@ jobs:
         cd Mesh_2/
         ls
         cd /home/runner/work/inverseCSG/inverseCSG/build
-        cmake cpp/
-        make
+        sudo cmake cpp/
+        sudo make
         cd /home/runner/work/inverseCSG/inverseCSG/
         sudo apt-get install zypper
         sudo zypper install -t pattern "devel_C_C++" "devel_java"
@@ -53,12 +53,12 @@ jobs:
         cd sketch-backend
         bash autogen.sh
         ./configure
-        make -j2
+        sudo make -j2
         cd ../sketch-frontend
-        make system-install DESTDIR=/usr/bin SUDOINSTALL=1
-        apt-get install mvn
+        sudo make system-install DESTDIR=/usr/bin SUDOINSTALL=1
+        sudo apt-get install mvn
         sudo apt-get install mvn
         sudo apt-get install maven
-        make system-install DESTDIR=/usr/bin SUDOINSTALL=1
+        sudo make system-install DESTDIR=/usr/bin SUDOINSTALL=1
         cd /home/runner/work/inverseCSG/inverseCSG/
         python3 run_tests.py build/ one_cube
