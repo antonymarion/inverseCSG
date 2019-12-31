@@ -202,9 +202,9 @@ if not os.path.exists(cpp_build_folder):
 os.chdir(cpp_build_folder)
 os.environ['CC'] = '/usr/bin/gcc-8'
 os.environ['CXX'] = '/usr/bin/g++-8'
-helper.RunWithStdout('sudo cmake -DCGAL_DIR=%s %s' % (env_variables['CGAL_DIR'], \
+helper.Run('sudo cmake -DCGAL_DIR=%s %s' % (env_variables['CGAL_DIR'], \
                                        os.path.join(root_folder, 'cpp')))
-helper.RunWithStdout('sudo make -w -s --no-print-directory')
+helper.Run('sudo make -w -s --no-print-directory')
 helper.PrintWithGreenColor('C++ program compiled successfully.')
 env_variables['CSG_CPP_EXE'] = os.path.join(cpp_build_folder,
                                             'csg_cpp_command')
