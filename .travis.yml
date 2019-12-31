@@ -11,15 +11,20 @@ matrix:
   - dist: xenial
     compiler: gcc
     os: linux
+    addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-5
+      env:
+         - MATRIX_EVAL="CC=gcc-5.5.0 && CXX=g++-5"
+         - TRAVIS_DIST_NAME="xenial"
     sudo: required
-    env:
-      - TRAVIS_DIST_NAME="xenial"
 
 before_install:
   - sudo apt-get update
   - if [[ ( "$TRAVIS_DIST_NAME" == "xenial" ) ]]; then sudo add-apt-repository ppa:fkrull/deadsnakes -y; fi
-  - sudo apt-get update
-  - sudo add-apt-repository ppa:jonathonf/gcc-5.5 -y
   - sudo apt-get update
   - sudo apt-get install -y python3.6
   - sudo apt-get install python3-setuptools
