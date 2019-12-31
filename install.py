@@ -169,7 +169,7 @@ env_variables['CSG_ROOT'] = os.environ['CSG_ROOT'] = root_folder
 print('Attempt to install build-essential, autoconf, libtool, flex, bison, '
       'mecurial, zsh, and cmake. Asking for sudo privilege.')
 # This works for Ubuntu 17.04 and 16.04.
-exit_code = helper.Run('sudo apt-get install gcc-8 g++-8 -y', None)
+exit_code = helper.Run('sudo apt-get install gcc-9 g++-9 -y', None)
 if exit_code != 0:
   # This works for Ubuntu 14.04.
   helper.Run('sudo apt-get update')
@@ -179,7 +179,7 @@ if exit_code != 0:
   helper.Run('sudo apt-get update')
   helper.Run('sudo apt-get install gcc-snapshot -y')
   helper.Run('sudo apt-get update')
-  helper.Run('sudo apt-get install gcc-8 g++-8 -y')
+  helper.Run('sudo apt-get install gcc-9 g++-9 -y')
   helper.Run('sudo apt install python3-pip')
   helper.Run('sudo apt-get install autoconf libtool flex bison '
     'mercurial zsh cmake')
@@ -200,8 +200,8 @@ cpp_build_folder = os.path.join(build_folder, 'cpp')
 if not os.path.exists(cpp_build_folder):
   os.makedirs(cpp_build_folder)
 os.chdir(cpp_build_folder)
-os.environ['CC'] = '/usr/bin/gcc-8'
-os.environ['CXX'] = '/usr/bin/g++-8'
+os.environ['CC'] = '/usr/bin/gcc-9'
+os.environ['CXX'] = '/usr/bin/g++-9'
 helper.Run('sudo cmake -DCGAL_DIR=%s %s' % (env_variables['CGAL_DIR'], \
                                        os.path.join(root_folder, 'cpp')))
 helper.Run('sudo make -w -s --no-print-directory')
