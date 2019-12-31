@@ -19,7 +19,7 @@ matrix:
             - g++-5
             - gcc-5
       env:
-         - MATRIX_EVAL="CC=gcc-5.5.0 && CXX=g++-5"
+         - MATRIX_EVAL="CC=gcc-5 && CXX=g++-5"
          - TRAVIS_DIST_NAME="xenial"
          
 before_install:
