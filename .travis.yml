@@ -35,9 +35,11 @@ before_install:
   - sudo apt-get install python3-numpy
   - sudo apt-get install libcgal-qt5-dev
   - mkdir -p build
-script:
   - sudo unlink /usr/bin/gcc && sudo ln -s /usr/bin/gcc-8 /usr/bin/gcc
   - gcc --version
+  - sudo apt install cmake
+  - sudo apt upgrade
+script:
   - python3 install.py build
   - sudo python3 run_all.py
   - cd cpp && sudo python3 test.py
