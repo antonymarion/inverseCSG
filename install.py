@@ -240,6 +240,7 @@ env_variables['CSG_SKETCH_BACKEND'] = sketch_backend_folder
 os.chdir(sketch_backend_folder)
 helper.Run('sudo bash autogen.sh')
 helper.RunWithStdout('ls')
+helper.RunWithStdout('sudo touch config.log')
 helper.RunWithStdout('sudo chmod +x config.log')
 helper.RunWithStdout('sudo chmod +x configure')
 helper.RunWithStdout('./configure')
