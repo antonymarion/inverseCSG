@@ -139,7 +139,6 @@ def InstallMaven():
       print('env_PATH_variables: %s' % (env_variables['PATH']))
 
   # Check maven.
-  helper.RunWithStdout('sudo touch /usr/bin/mvn')
   helper.RunWithStdout('sudo ln -s /usr/bin/mvn '+maven_loc+'/mvn')
   helper.RunWithStdout('sudo mvn -v')
 

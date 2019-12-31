@@ -1,4 +1,7 @@
 # inverseCSG
+
+[![Build Status](https://travis-ci.com/antonymarion/inverseCSG.svg?branch=master)](https://travis-ci.com/antonymarion/inverseCSG)
+
 inversecsg code from paper https://dl.acm.org/citation.cfm?id=3275006 adapted to generate node-occ-csg-editor object script
 
 Please read the READMEs.
