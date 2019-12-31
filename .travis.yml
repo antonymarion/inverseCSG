@@ -11,6 +11,9 @@ matrix:
 #     env:
 #       - TRAVIS_DIST_NAME="bionic"
     - dist: xenial
+      compiler: gcc
+      os: linux
+      sudo: required
       env:
          - TRAVIS_DIST_NAME="xenial"
          
