@@ -242,7 +242,9 @@ helper.Run('sudo bash autogen.sh')
 helper.RunWithStdout('ls')
 helper.RunWithStdout('sudo find . -name "config.log"')
 helper.RunWithStdout('sudo df -h .')
-helper.RunWithStdout('./configure')
+helper.RunWithStdout('ls -l configure')
+helper.RunWithStdout('sudo cat /etc/fstab')
+helper.RunWithStdout('sudo sh ./configure')
 helper.RunWithStdout('sudo make -j2 -w -s --no-print-directory')
 # Interestingly, I need to manually do the following copy and paste work to
 # avoid an error in sketch-frontend.
