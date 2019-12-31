@@ -1,6 +1,8 @@
 language: c++
 
 matrix:
+
+matrix:
   include:
 #   - dist: bionic
 #     compiler: gcc
@@ -8,20 +10,16 @@ matrix:
 #     sudo: required
 #     env:
 #       - TRAVIS_DIST_NAME="bionic"
-  - dist: xenial
-    compiler: gcc
-    os: linux
-    addons:
+    - dist: xenial
+      addons:
         apt:
           sources:
             - ubuntu-toolchain-r-test
           packages:
-            - g++-5
+            - g++-4.9
       env:
-         - MATRIX_EVAL="CC=gcc-5.5.0 && CXX=g++-5"
-         - TRAVIS_DIST_NAME="xenial"
-    sudo: required
-
+         - MATRIX_EVAL="CC=gcc-5.5.0 && CXX=g++-4.9"
+         
 before_install:
   - sudo apt-get update
   - if [[ ( "$TRAVIS_DIST_NAME" == "xenial" ) ]]; then sudo add-apt-repository ppa:fkrull/deadsnakes -y; fi
