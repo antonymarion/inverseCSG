@@ -19,8 +19,8 @@ matrix:
           sources:
           - ubuntu-toolchain-r-test
           packages:
-          - gcc-8
-          - g++-8
+          - gcc-4.3
+          - g++-4.3
       env:
          - TRAVIS_DIST_NAME="xenial"
          
@@ -35,10 +35,10 @@ before_install:
   - sudo apt-get install python3-numpy
   - sudo apt-get install libcgal-qt5-dev
   - mkdir -p build
-  - sudo unlink /usr/bin/gcc && sudo ln -s /usr/bin/gcc-8 /usr/bin/gcc
+  - sudo unlink /usr/bin/gcc && sudo ln -s /usr/bin/gcc-4.3 /usr/bin/gcc
   - gcc --version
   - sudo apt install cmake
-  - sudo apt-mark hold mysql-server-5.7
+  - sudo apt-mark hold mysql-server-5.7 gcc-4.3 g++-4.3
   - sudo apt upgrade
 script:
   - python3 install.py build
