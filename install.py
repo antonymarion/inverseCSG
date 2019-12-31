@@ -240,9 +240,8 @@ env_variables['CSG_SKETCH_BACKEND'] = sketch_backend_folder
 os.chdir(sketch_backend_folder)
 helper.Run('sudo bash autogen.sh')
 helper.RunWithStdout('ls')
-helper.RunWithStdout('sudo touch config.log')
-helper.RunWithStdout('sudo chmod 777 config.log')
-helper.RunWithStdout('sudo chmod +x configure')
+helper.RunWithStdout('sudo find . -name "config.log"')
+helper.RunWithStdout('sudo df -h .')
 helper.RunWithStdout('./configure')
 helper.RunWithStdout('sudo make -j2 -w -s --no-print-directory')
 # Interestingly, I need to manually do the following copy and paste work to
