@@ -16,10 +16,10 @@ matrix:
           sources:
             - ubuntu-toolchain-r-test
           packages:
-            - g++-6
-            - gcc-6
+            - g++-8
+            - gcc-8
       env:
-         - MATRIX_EVAL="CC=gcc-6 && CXX=g++-6"
+         - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
          - TRAVIS_DIST_NAME="xenial"
          
 before_install:
