@@ -239,8 +239,8 @@ sketch_backend_folder = os.path.join(sketch_folder, 'sketch-backend')
 env_variables['CSG_SKETCH_BACKEND'] = sketch_backend_folder
 os.chdir(sketch_backend_folder)
 helper.Run('sudo bash autogen.sh')
-helper.RunWithStdout('sudo chmod +x configure')
-helper.RunWithStdout('./configure')
+#helper.RunWithStdout('sudo chmod +x configure')
+#helper.RunWithStdout('./configure')
 helper.RunWithStdout('sudo make -j2 -w -s --no-print-directory')
 # Interestingly, I need to manually do the following copy and paste work to
 # avoid an error in sketch-frontend.
