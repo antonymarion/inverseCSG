@@ -114,10 +114,12 @@ def InstallJava():
   helper.Run('sudo apt install default-jdk')
   # Currently JAVA_HOME is hard coded.
   helper.RunWithStdout('ls /usr/lib/jvm/')
-  if env_variables['TRAVIS_DIST_NAME']=='bionic':
+  if os.environ['TRAVIS_DIST_NAME']=='bionic':
     java_home = '/usr/lib/jvm/java-1.11.0-openjdk-amd64/' 
-  if env_variables['TRAVIS_DIST_NAME']=='xenial':
+  if os.environ['TRAVIS_DIST_NAME']=='xenial':
     java_home = '/usr/lib/jvm/java-1.8.0-openjdk-amd64/' 
+  if os.environ['TRAVIS_DIST_NAME']=='eoan':
+    java_home = '/usr/lib/jvm/java-1.11.0-openjdk-amd64/' 
   env_variables['JAVA_HOME'] = os.environ['JAVA_HOME'] = java_home
   path = os.path.join(java_home, 'bin') + ':' + os.environ['PATH']
   env_variables['PATH'] = os.environ['PATH'] = path
