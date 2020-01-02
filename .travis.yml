@@ -4,6 +4,11 @@ matrix:
 
 matrix:
   include:
+    - name: "Last Ubuntu 19.10 (Eoan Ermine) with GCC"
+      os: linux
+      dist: bionic
+      group: travis_latest
+      env: DOCKER="ubuntu:eoan" VARIANT="ubuntu" TOOL="compile" COMPILER_C="gcc" COMPILER_CXX="g++" TRAVIS_DIST_NAME="eoan"
     - dist: xenial
       compiler: gcc
       os: linux
