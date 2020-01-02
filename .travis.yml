@@ -25,7 +25,7 @@ matrix:
          - TRAVIS_DIST_NAME="xenial"
          
 before_install:
-  - sudo apt-get autoremove -y --allow-remove-essential libc6-dev libc6 libc6:amd64 locales multiarch-support libc-dev-bin libc-bin 
+  - sudo apt-get autoremove -y --allow-remove-essential  libc6 libc-dev-bin  
   - sudo apt-get update
   - echo '# Install LIBC6'
   - sudo curl -OL http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6_2.27-3ubuntu1_amd64.deb
