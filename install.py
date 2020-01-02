@@ -251,6 +251,7 @@ helper.RunWithStdout('sudo make -j2 -w -s --no-print-directory')
 # Interestingly, I need to manually do the following copy and paste work to
 # avoid an error in sketch-frontend.
 sketch_solver_folder = os.path.join(sketch_backend_folder, 'src/SketchSolver')
+helper.RunWithStdout('ls '+ os.path.join(sketch_solver_folder))
 shutil.copyfile(os.path.join(sketch_solver_folder, 'libcegis.a'), \
                 os.path.join(sketch_solver_folder, '.libs/libcegis.a'))
 shutil.copyfile(os.path.join(sketch_solver_folder, 'cegis'), \
@@ -282,7 +283,7 @@ SaveCustomizedEnvironmentVariables(env_variables, os.path.join(
 ################################################################################
 
 # Check on example file from CSGInverse samples
-helper.Run('sudo python3 run_tests.py build ex_141')
+helper.Run('sudo python3 run_tests.py build ex_140')
 
 # Check csg_cpp_command
 helper.Run('sudo ./csg_cpp_command')
