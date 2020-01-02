@@ -283,9 +283,11 @@ SaveCustomizedEnvironmentVariables(env_variables, os.path.join(
 ################################################################################
 
 # Check on example file from CSGInverse samples
+os.chdir(root_folder)
 helper.Run('sudo python3 run_tests.py build ex_140')
 
 # Check csg_cpp_command
+os.chdir(root_folder)
 helper.Run('sudo ./csg_cpp_command')
 
 # TODO: Launch code on node-step part files
