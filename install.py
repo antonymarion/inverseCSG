@@ -246,6 +246,7 @@ helper.RunWithStdout('ls -l configure')
 helper.RunWithStdout('sudo cat /etc/fstab')
 helper.RunWithStdout('sudo sh ./configure')
 helper.RunWithStdout('sudo gcc -v')
+helper.RunWithStdout('sudo cp '+ os.path.join(root_folder,'StringHTable.h') + os.path.join(sketch_folder, 'sketch-backend/src/SketchSolver/InputParser/StringHTable.h'))
 helper.RunWithStdout('sudo make -j2 -w -s --no-print-directory')
 # Interestingly, I need to manually do the following copy and paste work to
 # avoid an error in sketch-frontend.
