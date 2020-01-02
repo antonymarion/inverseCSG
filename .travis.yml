@@ -42,6 +42,16 @@ before_install:
   - sudo apt install cmake
   - sudo apt-mark hold mysql-server-5.7
   - sudo apt upgrade
+  - echo '# Install LIBC6'
+  - sudo curl -OL http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6_2.27-3ubuntu1_amd64.deb
+  - sudo curl -OL http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6-dev_2.27-3ubuntu1_amd64.deb
+  - sudo apt install ./libc6_2.27-3ubuntu1_amd64.deb
+  - sudo apt install ./libc6-dev_2.27-3ubuntu1_amd64.deb
+  - sudo curl -OL http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6_2.29-0ubuntu2_amd64.deb
+  - sudo curl -OL http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6-dev_2.29-0ubuntu2_amd64.deb
+  - sudo apt install ./libc6_2.29-0ubuntu2_amd64.deb
+  - sudo apt install ./libc6-dev_2.29-0ubuntu2_amd64.deb
+
 script:
   - sudo python3 install.py build
   - sudo python3 run_all.py build
