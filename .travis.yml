@@ -41,7 +41,7 @@ before_install:
   - sudo apt-mark hold mysql-server-5.7
   - sudo apt upgrade
 script:
-  - python3 install.py build
+  - sudo python3 install.py build
   - sudo python3 run_all.py
   - cd cpp && sudo python3 test.py
 after_success:
