@@ -234,7 +234,7 @@ os.chdir(sketch_folder)
 helper.Run('sudo hg clone https://bitbucket.org/gatoatigrado/sketch-backend')
 helper.Run('sudo mv sketch-backend sketch-backend-default')
 # Use this version of sketch.
-helper.Run('sudo hg clone -r 35a25cd sketch-backend-default sketch-backend')
+helper.Run('sudo hg clone -r numsynth2 sketch-backend-default sketch-backend')
 sketch_backend_folder = os.path.join(sketch_folder, 'sketch-backend')
 env_variables['CSG_SKETCH_BACKEND'] = sketch_backend_folder
 os.chdir(sketch_backend_folder)
