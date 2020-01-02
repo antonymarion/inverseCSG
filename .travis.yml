@@ -29,12 +29,12 @@ before_install:
   - echo '# Install LIBC6'
   - sudo curl -OL http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6_2.27-3ubuntu1_amd64.deb
   - sudo curl -OL http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6-dev_2.27-3ubuntu1_amd64.deb
-  - sudo apt install ./libc6_2.27-3ubuntu1_amd64.deb
-  - sudo apt install ./libc6-dev_2.27-3ubuntu1_amd64.deb
+  - sudo apt install -f ./libc6_2.27-3ubuntu1_amd64.deb
+  - sudo apt install -f ./libc6-dev_2.27-3ubuntu1_amd64.deb
   - sudo curl -OL http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6_2.29-0ubuntu2_amd64.deb
   - sudo curl -OL http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6-dev_2.29-0ubuntu2_amd64.deb
-  - sudo apt install ./libc6_2.29-0ubuntu2_amd64.deb
-  - sudo apt install ./libc6-dev_2.29-0ubuntu2_amd64.deb
+  - sudo apt install -f ./libc6_2.29-0ubuntu2_amd64.deb
+  - sudo apt install -f ./libc6-dev_2.29-0ubuntu2_amd64.deb
   - if [[ ( "$TRAVIS_DIST_NAME" == "xenial" ) ]]; then sudo add-apt-repository ppa:fkrull/deadsnakes -y; fi
   - sudo apt-get update
   - sudo apt-get install -y python3.6
