@@ -4,12 +4,12 @@ matrix:
 
 matrix:
   include:
-    - dist: bionic
+    - dist: xenial
       compiler: gcc
       os: linux
       sudo: required
       env:
-        - TRAVIS_DIST_NAME="bionic"
+        - TRAVIS_DIST_NAME="xenial"
     - dist: bionic
       compiler: gcc
       os: linux
