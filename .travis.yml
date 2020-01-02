@@ -44,7 +44,7 @@ before_install:
   - sudo apt upgrade
 script:
   - sudo python3 install.py build
-  - sudo python3 run_all.py
+  - sudo python3 run_all.py build
   - cd cpp && sudo python3 test.py
 after_success:
   - bash push.sh
