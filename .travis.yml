@@ -36,7 +36,9 @@ before_install:
   - sudo apt-get install libcgal-qt5-dev
   - mkdir -p build
   - sudo unlink /usr/bin/gcc && sudo ln -s /usr/bin/gcc-9 /usr/bin/gcc
+  - sudo unlink /usr/bin/g++ && sudo ln -s /usr/bin/g++-9 /usr/bin/g++
   - gcc --version
+  - g++ --version
   - sudo apt install cmake
   - sudo apt-mark hold mysql-server-5.7
   - sudo apt upgrade
