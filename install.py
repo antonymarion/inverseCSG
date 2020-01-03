@@ -175,15 +175,15 @@ env_variables['CSG_ROOT'] = os.environ['CSG_ROOT'] = root_folder
 helper.Run('sudo apt-get update')
 helper.Run('sudo apt-get install build-essential ' \
   'software-properties-common -y')
-helper.Run('sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y')
+helper.RunWithStdout('sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y')
 helper.Run('sudo apt-get update')
-helper.Run('sudo apt-get install gcc-snapshot -y')
+helper.RunWithStdout('sudo apt-get install gcc-snapshot -y')
 
 # Install python dependencies.
-helper.Run('sudo python3 -m pip install numpy scipy matplotlib ipython '
-           'jupyter pandas sympy nose -y')
-helper.Run('sudo python3 -m pip install -U scikit-learn -y')
-helper.Run('sudo apt-get install autoconf libtool flex bison '
+#helper.RunWithStdout('sudo python3 -m pip install numpy scipy matplotlib ipython '
+#           'jupyter pandas sympy nose -y')
+helper.RunWithStdout('sudo python3 -m pip install -U scikit-learn -y')
+helper.RunWithStdout('sudo apt-get install autoconf libtool flex bison '
   'mercurial zsh cmake -y')
 
 # Install CGAL.
