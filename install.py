@@ -178,8 +178,6 @@ helper.RunWithStdout('sudo dpkg -l libc6')
 helper.Run('sudo apt-get update')
 helper.Run('sudo apt-get install build-essential ' \
   'software-properties-common -y')
-helper.RunWithStdout('sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y')
-helper.Run('sudo apt-get update')
 helper.RunWithStdout('sudo apt-get install gcc-snapshot -y')
 
 # Install python dependencies.
