@@ -272,6 +272,8 @@ helper.Run('sudo hg clone -r 2c8b363 sketch-frontend-default sketch-frontend')
 sketch_frontend_folder = os.path.join(sketch_folder, 'sketch-frontend')
 env_variables['CSG_SKETCH_FRONTEND'] = sketch_frontend_folder
 os.chdir(sketch_frontend_folder)
+shutil.copyfile(os.path.join(root_folder, 'pom.xml'), \
+                os.path.join(sketch_frontend_folder, 'pom.xml'))
 helper.Run('sudo make system-install DESTDIR=/usr/bin SUDOINSTALL=1 -w --no-print-directory -s')
 
 # Now check Sketch again.
