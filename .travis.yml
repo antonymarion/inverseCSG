@@ -1,5 +1,12 @@
 language: c++
 
+
+branches:
+    only:
+    - master
+    - /^travis-.*/
+
+
 matrix:
   include:
 #     - name: "Last Ubuntu 19.10 (Eoan Ermine) with GCC"
@@ -65,8 +72,24 @@ script:
 #   Decomment following code if you have enough RAM to test the previously compiled binary+python program
 #   - sudo python3 run_all.py build
   - cd cpp && sudo python3 test.py
+  
+  
 after_success:
   - bash push.sh
+
+after_failure:
+# http://jsteemann.github.io/blog/2014/10/30/getting-core-dumps-of-failed-travisci-builds/
+- coreFile=$(find . -maxdepth 1 -name "*core*" | head -n 1)
+- |-
+    if [[ -f "$coreFile" ]]
+    then
+        gdb -c "$coreFile" test \
+            -ex "thread apply all bt" \
+            -ex "set pagination 0" \
+            -batch
+    fi
+    
+    
 env:
   global:
     secure: 
