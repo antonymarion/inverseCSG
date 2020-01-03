@@ -297,6 +297,8 @@ os.chdir(root_folder)
 
 # Check csg_cpp_command
 os.chdir(root_folder)
+helper.RunWithStdout('ldd csg_cpp_command')
+helper.RunWithStdout('ldconfig csg_cpp_command')
 helper.RunWithStdout('sudo ./csg_cpp_command')
 
 # TODO: Launch code on node-step part files
