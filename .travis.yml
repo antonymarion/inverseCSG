@@ -29,8 +29,8 @@ before_install:
   - sudo mkdir build
   - cd build
   - sudo ../configure --prefix "$glibc_install"
-  - sudo make -j `nproc`
-  - sudo make install -j `nproc`
+  - sudo make -j `nproc` 2> /dev/null'
+  - sudo make install -j `nproc` 2> /dev/null'
   - sudo apt-get update
   - if [[ ( "$TRAVIS_DIST_NAME" == "xenial" ) ]]; then sudo add-apt-repository ppa:fkrull/deadsnakes -y; fi
   - if [[ ( "$TRAVIS_DIST_NAME" == "xenial" ) ]]; then sudo apt-get update; fi
