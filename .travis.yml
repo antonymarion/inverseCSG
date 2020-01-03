@@ -9,6 +9,16 @@ matrix:
       dist: bionic
       group: travis_latest
       env: DOCKER="ubuntu:eoan" VARIANT="ubuntu" TOOL="compile" COMPILER_C="gcc" COMPILER_CXX="g++" TRAVIS_DIST_NAME="eoan"
+      compiler: gcc
+      os: linux
+      sudo: required
+      addons:
+        apt:
+          sources:
+          - ubuntu-toolchain-r-test
+          packages:
+          - gcc-9
+          - g++-9
 #     - dist: xenial
 #       compiler: gcc
 #       os: linux
@@ -21,7 +31,17 @@ matrix:
       sudo: required
       env:
          - TRAVIS_DIST_NAME="bionic"
-         
+      compiler: gcc
+      os: linux
+      sudo: required
+      addons:
+        apt:
+          sources:
+          - ubuntu-toolchain-r-test
+          packages:
+          - gcc-9
+          - g++-9
+          
 before_install:
 #   - sudo git clone git://sourceware.org/git/glibc.git
 #   - cd glibc
@@ -41,6 +61,10 @@ before_install:
   - sudo apt-get install python3-numpy
   - sudo apt-get install libcgal-qt5-dev
   - mkdir -p build
+  - sudo unlink /usr/bin/gcc && sudo ln -s /usr/bin/gcc-9 /usr/bin/gcc
+  - gcc --version
+  - sudo unlink /usr/bin/g++ && sudo ln -s /usr/bin/g++-9 /usr/bin/g++
+  - g++ --version
   - sudo apt install cmake
   - sudo apt-mark hold mysql-server-5.7
   - sudo apt upgrade
