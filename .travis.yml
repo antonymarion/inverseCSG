@@ -9,12 +9,12 @@ matrix:
       dist: bionic
       group: travis_latest
       env: DOCKER="ubuntu:eoan" VARIANT="ubuntu" TOOL="compile" COMPILER_C="gcc" COMPILER_CXX="g++" TRAVIS_DIST_NAME="eoan"
-    - dist: xenial
-      compiler: gcc
-      os: linux
-      sudo: required
-      env:
-        - TRAVIS_DIST_NAME="xenial"
+#     - dist: xenial
+#       compiler: gcc
+#       os: linux
+#       sudo: required
+#       env:
+#         - TRAVIS_DIST_NAME="xenial"
     - dist: bionic
       compiler: gcc
       os: linux
@@ -23,6 +23,14 @@ matrix:
          - TRAVIS_DIST_NAME="bionic"
          
 before_install:
+  - sudo git clone git://sourceware.org/git/glibc.git
+  - sudo cd glibc
+  - sudo git checkout glibc-2.28
+  - sudo mkdir build
+  - sudo cd build
+  - sudo ../configure --prefix "$glibc_install"
+  - sudo make -j `nproc`
+  - sudo make install -j `nproc`
   - sudo apt-get update
   - if [[ ( "$TRAVIS_DIST_NAME" == "xenial" ) ]]; then sudo add-apt-repository ppa:fkrull/deadsnakes -y; fi
   - if [[ ( "$TRAVIS_DIST_NAME" == "xenial" ) ]]; then sudo apt-get update; fi
