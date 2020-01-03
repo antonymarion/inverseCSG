@@ -48,7 +48,6 @@ matrix:
             - -t bionic
             - gcc-9
             - g++-9
-            - gdb
             - make/cosmic
           
 before_install:
@@ -60,7 +59,7 @@ before_install:
   - sudo apt-get install -y python3-pip
   - sudo python3 -m pip install --upgrade pip
   - sudo apt-get install python3-numpy
-  - sudo apt-get install libcgal-qt5-dev
+  - sudo apt-get install. -y libgsl2 libcgal-qt5-dev
   - mkdir -p build
   - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 60 --slave /usr/bin/g++ g++ /usr/bin/g++-9
   - sudo apt install cmake
@@ -77,18 +76,8 @@ script:
 after_success:
   - bash push.sh
 
-after_failure:
+# after_failure:
 # http://jsteemann.github.io/blog/2014/10/30/getting-core-dumps-of-failed-travisci-builds/
-- coreFile=$(find . -maxdepth 1 -name "*core*" | head -n 1)
-- |-
-    if [[ -f "$coreFile" ]]
-    then
-        gdb -c "$coreFile" test \
-            -ex "thread apply all bt" \
-            -ex "set pagination 0" \
-            -batch
-    fi
-    
     
 env:
   global:
