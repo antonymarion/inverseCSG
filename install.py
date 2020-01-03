@@ -171,6 +171,9 @@ helper.PrintWithGreenColor('Build folder created.')
 # Add a new environment variable to save the location of the root folder.
 env_variables['CSG_ROOT'] = os.environ['CSG_ROOT'] = root_folder
 
+# show LIBC version
+helper.RunWithStdout('sudo dpkg -l libc6')
+
 # This may work on Xenial
 helper.Run('sudo apt-get update')
 helper.Run('sudo apt-get install build-essential ' \
@@ -293,6 +296,7 @@ os.chdir(root_folder)
 
 # Check csg_cpp_command
 os.chdir(root_folder)
+helper.RunWithStdout('sudo dpkg -l libc6')
 helper.RunWithStdout('sudo ldd csg_cpp_command')
 helper.RunWithStdout('sudo ldconfig csg_cpp_command')
 helper.RunWithStdout('sudo ./csg_cpp_command')
