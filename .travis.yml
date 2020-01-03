@@ -74,7 +74,8 @@ script:
   
   
 after_success:
-  - bash push.sh
+# remove command since TRAVIS free machines can't execute compiled program. (missing RAM)
+#   - bash push.sh
 
 # after_failure:
 # http://jsteemann.github.io/blog/2014/10/30/getting-core-dumps-of-failed-travisci-builds/
