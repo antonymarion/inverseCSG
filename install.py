@@ -268,7 +268,7 @@ os.chdir(sketch_folder)
 helper.Run('sudo hg clone https://bitbucket.org/gatoatigrado/sketch-frontend')
 helper.Run('sudo mv sketch-frontend sketch-frontend-default')
 # Use this version of sketch.
-helper.Run('sudo hg clone -r 42c057c sketch-frontend-default sketch-frontend')
+helper.Run('sudo hg clone -r 2c8b363 sketch-frontend-default sketch-frontend')
 sketch_frontend_folder = os.path.join(sketch_folder, 'sketch-frontend')
 env_variables['CSG_SKETCH_FRONTEND'] = sketch_frontend_folder
 os.chdir(sketch_frontend_folder)
