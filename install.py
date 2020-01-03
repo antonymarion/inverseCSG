@@ -202,8 +202,8 @@ if not os.path.exists(cpp_build_folder):
 os.chdir(cpp_build_folder)
 helper.RunWithStdout('sudo ls /usr/bin/gcc*')
 helper.RunWithStdout('sudo ls /usr/bin/g++*')
-os.environ['CC'] = '/usr/bin/gcc-7'
-os.environ['CXX'] = '/usr/bin/g++-7'
+os.environ['CC'] = '/usr/bin/gcc-9'
+os.environ['CXX'] = '/usr/bin/g++-9'
 helper.Run('sudo cmake -DCGAL_DIR=%s %s' % (env_variables['CGAL_DIR'], \
                                        os.path.join(root_folder, 'cpp')))
 helper.Run('sudo make -w -s --no-print-directory')
