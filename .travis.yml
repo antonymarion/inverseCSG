@@ -55,10 +55,7 @@ before_install:
   - sudo apt-get install python3-numpy
   - sudo apt-get install libcgal-qt5-dev
   - mkdir -p build
-  - sudo unlink /usr/bin/gcc && sudo ln -s /usr/bin/gcc-9 /usr/bin/gcc
-  - gcc --version
-  - sudo unlink /usr/bin/g++ && sudo ln -s /usr/bin/g++-9 /usr/bin/g++
-  - g++ --version
+  - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 60 --slave /usr/bin/g++ g++ /usr/bin/g++-9
   - sudo apt install cmake
   - sudo apt-mark hold mysql-server-5.7
   - sudo apt upgrade
