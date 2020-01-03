@@ -24,10 +24,10 @@ matrix:
          
 before_install:
   - sudo git clone git://sourceware.org/git/glibc.git
-  - sudo cd glibc
+  - cd glibc
   - sudo git checkout glibc-2.28
   - sudo mkdir build
-  - sudo cd build
+  - cd build
   - sudo ../configure --prefix "$glibc_install"
   - sudo make -j `nproc`
   - sudo make install -j `nproc`
