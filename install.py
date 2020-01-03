@@ -113,7 +113,13 @@ def InstallJava():
   helper.Run('sudo apt-get update')
   helper.Run('sudo apt install default-jdk')
   # Currently JAVA_HOME is hard coded.
-  java_home = '/usr/lib/jvm/java-1.8.0-openjdk-amd64/' 
+  helper.RunWithStdout('ls /usr/lib/jvm/')
+  if os.environ['TRAVIS_DIST_NAME']=='bionic':
+    java_home = '/usr/lib/jvm/java-1.11.0-openjdk-amd64/' 
+  if os.environ['TRAVIS_DIST_NAME']=='xenial':
+    java_home = '/usr/lib/jvm/java-1.8.0-openjdk-amd64/' 
+  if os.environ['TRAVIS_DIST_NAME']=='eoan':
+    java_home = '/usr/lib/jvm/java-1.11.0-openjdk-amd64/' 
   env_variables['JAVA_HOME'] = os.environ['JAVA_HOME'] = java_home
   path = os.path.join(java_home, 'bin') + ':' + os.environ['PATH']
   env_variables['PATH'] = os.environ['PATH'] = path
@@ -246,10 +252,12 @@ helper.RunWithStdout('ls -l configure')
 helper.RunWithStdout('sudo cat /etc/fstab')
 helper.RunWithStdout('sudo sh ./configure')
 helper.RunWithStdout('sudo gcc -v')
+helper.RunWithStdout('sudo cp '+ os.path.join(root_folder,'StringHTable.h') + ' ' + os.path.join(sketch_folder, 'sketch-backend/src/SketchSolver/InputParser/StringHTable.h'))
 helper.RunWithStdout('sudo make -j2 -w -s --no-print-directory')
 # Interestingly, I need to manually do the following copy and paste work to
 # avoid an error in sketch-frontend.
 sketch_solver_folder = os.path.join(sketch_backend_folder, 'src/SketchSolver')
+helper.RunWithStdout('ls '+ os.path.join(sketch_solver_folder))
 shutil.copyfile(os.path.join(sketch_solver_folder, 'libcegis.a'), \
                 os.path.join(sketch_solver_folder, '.libs/libcegis.a'))
 shutil.copyfile(os.path.join(sketch_solver_folder, 'cegis'), \
@@ -264,6 +272,8 @@ helper.Run('sudo hg clone -r 2c8b363 sketch-frontend-default sketch-frontend')
 sketch_frontend_folder = os.path.join(sketch_folder, 'sketch-frontend')
 env_variables['CSG_SKETCH_FRONTEND'] = sketch_frontend_folder
 os.chdir(sketch_frontend_folder)
+shutil.copyfile(os.path.join(root_folder, 'pom.xml'), \
+                os.path.join(sketch_frontend_folder, 'pom.xml'))
 helper.Run('sudo make system-install DESTDIR=/usr/bin SUDOINSTALL=1 -w --no-print-directory -s')
 
 # Now check Sketch again.
@@ -281,10 +291,13 @@ SaveCustomizedEnvironmentVariables(env_variables, os.path.join(
 ################################################################################
 
 # Check on example file from CSGInverse samples
-helper.Run('sudo python3 run_tests.py build ex_141')
+os.chdir(root_folder)
+# Decomment this code if you RAM can handle these calculations
+# helper.RunWithStdout('sudo python3 run_tests.py build ex_140')
 
 # Check csg_cpp_command
-helper.Run('sudo ./csg_cpp_command')
+os.chdir(root_folder)
+helper.RunWithStdout('sudo ./csg_cpp_command')
 
 # TODO: Launch code on node-step part files
 

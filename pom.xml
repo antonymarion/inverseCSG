@@ -1,0 +1,225 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>edu.mit.csail.sketch</groupId>
+    <artifactId>sketch-frontend</artifactId>
+    <name>SKETCH compiler frontend</name>
+    <description>SKETCH compiler frontend, responsible for AST lowering
+        and optimization</description>
+    <version>1.7.5</version>
+    <url>http://sketch1.csail.mit.edu</url>
+
+    <properties>
+        <!-- assembly is not very intelligent... -->
+        <osname>${os.name}</osname>
+        <osarch>${os.arch}</osarch>
+    </properties>
+
+    <profiles>
+        <!-- maven doesn't define a variable os.family! -->
+        <profile>
+            <id>windows</id>
+            <activation>
+                <os>
+                    <family>windows</family>
+                </os>
+            </activation>
+            <properties>
+                <osfamily>windows</osfamily>
+                <cegisBinName>cegis.exe</cegisBinName>
+            </properties>
+        </profile>
+        <profile>
+            <id>linux</id>
+            <activation>
+                <os>
+                    <family>unix</family>
+                </os>
+            </activation>
+            <properties>
+                <osfamily>unix</osfamily>
+                <cegisBinName>cegis</cegisBinName>
+            </properties>
+        </profile>
+    </profiles>
+
+    <distributionManagement>
+        <repository>
+            <id>cobol</id>
+            <name>cobol maven repository</name>
+            <url>scp://cobol.cs.berkeley.edu/home/ntung/public_html/mvn
+            </url>
+        </repository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>uc berkeley cobol</id>
+            <name>UC Berkeley Maven2 Repository</name>
+            <url>http://ntung.com/mvn</url>
+        </repository>
+        <repository>
+            <id>mvnrepository</id>
+            <name>Mvn Repository</name>
+            <url>http://repo1.maven.org/maven2</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>antlr</groupId>
+            <artifactId>antlr</artifactId>
+            <version>2.7.7</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>commons-cli</groupId>
+            <artifactId>commons-cli</artifactId>
+            <version>1.2</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>1.4</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-math3</artifactId>
+            <version>3.4.1</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.6</version>
+            <type>jar</type>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>xtc</groupId>
+            <artifactId>rats-runtime</artifactId>
+            <version>1.15.0</version>
+        </dependency>
+        <dependency>
+            <groupId>gnu.getopt</groupId>
+            <artifactId>java-getopt</artifactId>
+            <version>1.0.13</version>
+        </dependency>
+        <dependency>
+            <groupId>org.anarres</groupId>
+            <artifactId>jcpp</artifactId>
+            <version>1.4.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.swinglabs</groupId>
+            <artifactId>swing-layout</artifactId>
+            <version>1.0.3</version>
+        </dependency>
+
+        <!-- serialize objects to xml easily; see FunctionDeclPrinter for example -->
+        <dependency>
+            <groupId>com.thoughtworks.xstream</groupId>
+            <artifactId>xstream</artifactId>
+            <version>1.3.1</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/resources/filtered</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+            </resource>
+        </resources>
+        <plugins>
+            <!-- identify java source version -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.0.2</version>
+                <configuration>
+                    <classifier>test</classifier>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <excludes>
+                        <exclude>sketch/compiler/main/other/ParseFunctions.java</exclude>
+                        <exclude>sketch/compiler/main/par/ParallelSketchMain.java</exclude>
+                        <exclude>sketch/compiler/main/par/RandomParallelSketchMain.java</exclude>
+                        <exclude>sketch/compiler/main/par/old/*.java</exclude>
+                        <exclude>sketch/compiler/main/seq/SequentialSMTSketchMain.java</exclude>
+                        <exclude>sketch/compiler/smt/**/*.java</exclude>
+                        <exclude>sketch/compiler/main/sten/*.java</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+
+
+            <!-- package all dependencies -->
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptors>
+                        <descriptor>tmp-assembly.xml</descriptor>
+                        <!-- assemblies:
+                            jar_assembly.xml    noarch jar with dependencies
+                            platform_jar_assembly.xml    jar with cegis from $sketch-backend-proj
+                            launchers_assembly    same as above but with scripts
+                            tar_src_assembly.xml    both frontend and backend source only. -->
+                    </descriptors>
+                    <finalName>sketch-${project.version}</finalName>
+                </configuration>
+            </plugin>
+
+            <!-- only run JunitTest classes -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.14.1</version>
+                <configuration>
+                    <includes>
+                        <include>**/*JunitTest*</include>
+                    </includes>
+                </configuration>
+            </plugin>
+
+            <!-- execute with -ea -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <executions>
+                    <execution>
+                        <phase>default</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <arguments>
+                                <argument>-ea</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!--
+                fetch source in Eclipse; if it doesn't work, right click
+                and choose download sources
+            -->
+            <plugin>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>2.9</version>
+                <configuration>
+                    <downloadSources>true</downloadSources>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
