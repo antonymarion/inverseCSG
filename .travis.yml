@@ -35,10 +35,14 @@ matrix:
       addons:
         apt:
           sources:
-          - ubuntu-toolchain-r-test
+            - sourceline: "ppa:ubuntu-toolchain-r/test"
+            - sourceline: "deb http://archive.ubuntu.com/ubuntu cosmic main"
           packages:
-          - gcc-9
-          - g++-9
+            - -t bionic
+            - gcc-9
+            - g++-9
+            - gdb
+            - make/cosmic
           
 before_install:
   - sudo apt-get update
