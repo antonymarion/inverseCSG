@@ -237,7 +237,8 @@ os.chdir(sketch_folder)
 helper.Run('sudo hg clone https://bitbucket.org/gatoatigrado/sketch-backend')
 helper.Run('sudo mv sketch-backend sketch-backend-default')
 # Use this version of sketch.
-# helper.Run('sudo hg clone -r numsynth2 sketch-backend-default sketch-backend')
+# decomment this if SNOPT installed
+# helper.Run('sudo hg clone -r numsynth2 sketch-backend-default sketch-backend') 
 helper.Run('sudo hg clone -r 04b3403 sketch-backend-default sketch-backend')
 sketch_backend_folder = os.path.join(sketch_folder, 'sketch-backend')
 env_variables['CSG_SKETCH_BACKEND'] = sketch_backend_folder
@@ -297,7 +298,7 @@ os.chdir(root_folder)
 os.chdir(root_folder)
 helper.RunWithStdout('sudo dpkg -l libc6')
 helper.RunWithStdout('sudo ldd csg_cpp_command')
-helper.RunWithStdout('sudo ldconfig csg_cpp_command')
+# helper.RunWithStdout('sudo ldconfig csg_cpp_command')
 helper.RunWithStdout('sudo ./csg_cpp_command')
 
 # TODO: Launch code on node-step part files
