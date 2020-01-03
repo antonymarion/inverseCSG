@@ -178,16 +178,13 @@ helper.Run('sudo apt-get install build-essential ' \
 helper.Run('sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y')
 helper.Run('sudo apt-get update')
 helper.Run('sudo apt-get install gcc-snapshot -y')
-helper.Run('sudo apt-get update')
-helper.Run('sudo apt-get install autoconf libtool flex bison '
-  'mercurial zsh cmake')
 
 # Install python dependencies.
 helper.Run('sudo python3 -m pip install numpy scipy matplotlib ipython '
-           'jupyter pandas sympy nose')
-helper.Run('sudo python3 -m pip install -U scikit-learn')
+           'jupyter pandas sympy nose -y')
+helper.Run('sudo python3 -m pip install -U scikit-learn -y')
 helper.Run('sudo apt-get install autoconf libtool flex bison '
-  'mercurial zsh cmake')
+  'mercurial zsh cmake -y')
 
 # Install CGAL.
 InstallCGAL()
