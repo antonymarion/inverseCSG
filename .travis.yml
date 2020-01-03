@@ -4,21 +4,21 @@ matrix:
 
 matrix:
   include:
-    - name: "Last Ubuntu 19.10 (Eoan Ermine) with GCC"
-      os: linux
-      dist: bionic
-      group: travis_latest
-      env: DOCKER="ubuntu:eoan" VARIANT="ubuntu" TOOL="compile" COMPILER_C="gcc" COMPILER_CXX="g++" TRAVIS_DIST_NAME="eoan"
-      compiler: gcc
-      os: linux
-      sudo: required
-      addons:
-        apt:
-          sources:
-          - ubuntu-toolchain-r-test
-          packages:
-          - gcc-9
-          - g++-9
+#     - name: "Last Ubuntu 19.10 (Eoan Ermine) with GCC"
+#       os: linux
+#       dist: bionic
+#       group: travis_latest
+#       env: DOCKER="ubuntu:eoan" VARIANT="ubuntu" TOOL="compile" COMPILER_C="gcc" COMPILER_CXX="g++" TRAVIS_DIST_NAME="eoan"
+#       compiler: gcc
+#       os: linux
+#       sudo: required
+#       addons:
+#         apt:
+#           sources:
+#           - ubuntu-toolchain-r-test
+#           packages:
+#           - gcc-9
+#           - g++-9
 #     - dist: xenial
 #       compiler: gcc
 #       os: linux
@@ -43,14 +43,6 @@ matrix:
           - g++-9
           
 before_install:
-#   - sudo git clone git://sourceware.org/git/glibc.git
-#   - cd glibc
-#   - sudo git checkout glibc-2.28
-#   - sudo mkdir build
-#   - cd build
-#   - sudo ../configure --prefix "$glibc_install"
-#   - sudo make -j `nproc` -s --no-print-directory 2> /dev/null
-#   - sudo make install -j `nproc` 2> /dev/null
   - sudo apt-get update
   - if [[ ( "$TRAVIS_DIST_NAME" == "xenial" ) ]]; then sudo add-apt-repository ppa:fkrull/deadsnakes -y; fi
   - if [[ ( "$TRAVIS_DIST_NAME" == "xenial" ) ]]; then sudo apt-get update; fi
