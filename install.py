@@ -298,8 +298,11 @@ os.chdir(root_folder)
 os.chdir(root_folder)
 helper.RunWithStdout('sudo dpkg -l libc6')
 helper.RunWithStdout('sudo ldd csg_cpp_command')
-# helper.RunWithStdout('sudo ldconfig csg_cpp_command')
-helper.RunWithStdout('sudo ./csg_cpp_command')
+# install LIBC6 2.29 (Last One from Ubuntu 19.10's gcc/g++-9)
+helper.RunWithStdout('wget http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/libc6_2.29-0ubuntu2_amd64.deb')
+helper.RunWithStdout('sudo dpkg -i --auto-deconfigure libc6_2.29-0ubuntu2_amd64.deb')
+helper.RunWithStdout('sudo dpkg -l libc6') # should now be version 2.29
+helper.RunWithStdout('sudo ./csg_cpp_command') # should display clean-csg/genetic/csg-mesh-diff/ransac/legacy-sketch-tree...
 
 # TODO: Launch code on node-step part files
 
