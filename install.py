@@ -171,6 +171,17 @@ helper.PrintWithGreenColor('Build folder created.')
 # Add a new environment variable to save the location of the root folder.
 env_variables['CSG_ROOT'] = os.environ['CSG_ROOT'] = root_folder
 
+# This may work on Xenial
+helper.Run('sudo apt-get update')
+helper.Run('sudo apt-get install build-essential ' \
+  'software-properties-common -y')
+helper.Run('sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y')
+helper.Run('sudo apt-get update')
+helper.Run('sudo apt-get install gcc-snapshot -y')
+helper.Run('sudo apt-get update')
+helper.Run('sudo apt-get install autoconf libtool flex bison '
+  'mercurial zsh cmake')
+
 # Install python dependencies.
 helper.Run('sudo python3 -m pip install numpy scipy matplotlib ipython '
            'jupyter pandas sympy nose')
