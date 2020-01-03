@@ -180,11 +180,14 @@ helper.Run('sudo apt-get update')
 helper.RunWithStdout('sudo apt-get install gcc-snapshot -y')
 
 # Install python dependencies.
-#helper.RunWithStdout('sudo python3 -m pip install numpy scipy matplotlib ipython '
-#           'jupyter pandas sympy nose -y')
-helper.RunWithStdout('sudo python3 -m pip install -U scikit-learn -y')
+helper.RunWithStdout('sudo python3 -m pip install numpy scipy matplotlib ipython '
+           'jupyter pandas sympy nose')
+helper.RunWithStdout('sudo python3 -m pip install -U scikit-learn')
 helper.RunWithStdout('sudo apt-get install autoconf libtool flex bison '
   'mercurial zsh cmake -y')
+
+# BISON version should be gt 3
+helper.RunWithStdout('bison --version')
 
 # Install CGAL.
 InstallCGAL()
