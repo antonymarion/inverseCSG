@@ -47,7 +47,8 @@ before_install:
 
 script:
   - sudo python3 install.py build
-  - sudo python3 run_all.py build
+#   Decomment following code if you have enough RAM to test the previously compiled binary+python program
+#   - sudo python3 run_all.py build
   - cd cpp && sudo python3 test.py
 after_success:
   - bash push.sh
