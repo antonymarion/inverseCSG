@@ -171,29 +171,12 @@ helper.PrintWithGreenColor('Build folder created.')
 # Add a new environment variable to save the location of the root folder.
 env_variables['CSG_ROOT'] = os.environ['CSG_ROOT'] = root_folder
 
-# Check all C++ dependencies.
-print('Attempt to install build-essential, autoconf, libtool, flex, bison, '
-      'mecurial, zsh, and cmake. Asking for sudo privilege.')
-# This works for Ubuntu 17.04 and 16.04.
-exit_code = helper.Run('sudo apt-get install gcc-9 g++-9 -y', None)
-if exit_code != 0:
-  # This works for Ubuntu 14.04.
-  helper.Run('sudo apt-get update')
-  helper.Run('sudo apt-get install build-essential ' \
-    'software-properties-common -y')
-  helper.Run('sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y')
-  helper.Run('sudo apt-get update')
-  helper.Run('sudo apt-get install gcc-snapshot -y')
-  helper.Run('sudo apt-get update')
-  helper.Run('sudo apt-get install gcc-9 g++-9 -y')
-  helper.Run('sudo apt install python3-pip')
-  helper.Run('sudo apt-get install autoconf libtool flex bison '
-    'mercurial zsh cmake')
-
 # Install python dependencies.
 helper.Run('sudo python3 -m pip install numpy scipy matplotlib ipython '
            'jupyter pandas sympy nose')
 helper.Run('sudo python3 -m pip install -U scikit-learn')
+helper.Run('sudo apt-get install autoconf libtool flex bison '
+  'mercurial zsh cmake')
 
 # Install CGAL.
 InstallCGAL()
@@ -206,10 +189,10 @@ cpp_build_folder = os.path.join(build_folder, 'cpp')
 if not os.path.exists(cpp_build_folder):
   os.makedirs(cpp_build_folder)
 os.chdir(cpp_build_folder)
-helper.RunWithStdout('sudo ls /usr/bin/gcc')
-helper.RunWithStdout('sudo ls /usr/bin/g++')
-os.environ['CC'] = '/usr/bin/gcc-9'
-os.environ['CXX'] = '/usr/bin/g++-9'
+helper.RunWithStdout('sudo ls /usr/bin/gcc*')
+helper.RunWithStdout('sudo ls /usr/bin/g++*')
+os.environ['CC'] = '/usr/bin/gcc-7'
+os.environ['CXX'] = '/usr/bin/g++-7'
 helper.Run('sudo cmake -DCGAL_DIR=%s %s' % (env_variables['CGAL_DIR'], \
                                        os.path.join(root_folder, 'cpp')))
 helper.Run('sudo make -w -s --no-print-directory')
