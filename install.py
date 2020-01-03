@@ -292,7 +292,8 @@ SaveCustomizedEnvironmentVariables(env_variables, os.path.join(
 
 # Check on example file from CSGInverse samples
 os.chdir(root_folder)
-helper.RunWithStdout('sudo python3 run_tests.py build ex_140')
+# Decomment this code if you RAM can handle these calculations
+# helper.RunWithStdout('sudo python3 run_tests.py build ex_140')
 
 # Check csg_cpp_command
 os.chdir(root_folder)
