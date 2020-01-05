@@ -1,3 +1,16 @@
+# Préparation des donnés
+
+Utiliser meshFix ou meshLab ou des librairies python/c++ pour enlever les singularités. 
+
+- Merge close vertices
+- Remove duplicated faces
+- Remove duplicated vertices
+- Remove faces from non manifold edges
+- Select self intersecting faces -> remove
+- Remove zero Area faces
+- Remove vertices wrt quality
+
+
 # Processus de conversion complète en csg
 ```bash
 python run_test.py nameOfTest
@@ -29,3 +42,6 @@ ensuite simplification de l'arbre de CSGs
 ```bash
 python sketch2CSGExperimental.py  inputFileInCSGSketchFormat csgInTreeFormatPath simplifiedSsgInTreeFormatPath geometry.js
 ```
+
+# Conversion d'un jeu de données solution au format node-occ
+python sketch2CSGInputFolder.py rootFolderOfCsgCppCommandBinary pathOfSolutionFolder
