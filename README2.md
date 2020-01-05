@@ -44,4 +44,4 @@ python sketch2CSGExperimental.py  inputFileInCSGSketchFormat csgInTreeFormatPath
 ```
 
 # Conversion d'un jeu de données solution au format node-occ
-python sketch2CSGInputFolder.py rootFolderOfCsgCppCommandBinary pathOfSolutionFolder
+```python sketch2CSGInputFolder.py rootFolderOfCsgCppCommandBinary pathOfSolutionFolder```
