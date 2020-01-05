@@ -1,0 +1,1 @@
+Intersection(Cuboid(Vector(0, 0, 0), Vector(-0.50395, -0.50395, -5.99995), Vector(1.0079, 1.0089, 11.9999)), Union(Subtract(Cylinder(Vector(0, 0, 0), Vector(-0.002, 0.001, 4.48805), Vector(0, 0, 0.5119), 0.42), Cylinder(Vector(0, 0, 0), Vector(-0.001, 0, -18.1), Vector(0, 0, 36.2), 0.261)), Cylinder(Vector(0, 0, 0), Vector(-0.001, 0, -4.99995), Vector(0, 0, 9.7559), 0.261)))
