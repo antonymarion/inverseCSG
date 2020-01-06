@@ -1,0 +1,54 @@
+	CSG {
+	numNodes 5 
+	node0 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cuboid {
+				pmin -0.61091 -3.11254 -4.99995
+				size 1.95968 3.91947 5.87925
+			}
+		}
+	}
+	node1 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	14.999977780745441	
+			YRotate 	20.00012316307262	
+			XRotate 	100.00004285756798	
+			Cuboid {
+				pmin -1.35479 -1.496 -2.94318
+				size 1.9597 5.87917 3.91953
+			}
+		}
+	}
+	node2 {
+		Type internal
+		Operator union
+		numChildren 2
+		Child node0 node1 
+	}
+	node3 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cuboid {
+				pmin -2.83801 -3.73506 -5.99995
+				size 5.67603 7.4701 11.9999
+			}
+		}
+	}
+	node4 {
+		Type internal
+		Operator intersect
+		numChildren 2
+		Child node2 node3 
+	}
+	}

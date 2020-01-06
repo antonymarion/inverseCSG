@@ -1,0 +1,31 @@
+bit sphere0(Vector p) {{
+  return renderSphere(p, 0.000000, 0.000000, 0.000000, 57.000000);
+}}
+generator bit getSphere(Vector p) {
+ {{
+return sphere0(p);
+}}
+
+}
+generator bit getTorus(Vector p) {
+ {{
+return torus0(p);
+}}
+
+}
+
+int numCuboidHints = 1;
+CuboidHint[numCuboidHints] cuboidHints = {
+new CuboidHint(theta_x = 0.000000, theta_y = -0.000000, theta_z = 0.000000,
+  xlen = 4, ylen = 4, zlen = 4,
+  xlist = {-5.0, 2.27523, -19.0, 19.0},
+  ylist = {-2.72821, 2.72821, -19.0, 19.0},
+  zlist = {4.09141, -0.45561, -19.0, 19.0})
+};
+
+int numCylinderHints = 1;
+CylinderHint[numCylinderHints] cylinderHints = {null};
+
+bit torus0(Vector p) {{
+  return renderTorus(p, 1.354960, -0.010360, -0.506520, 0.004650, -0.999801, -0.019390, 0.000000, 0.019391, -1.566145, 2.673640, 0.878770);
+}}

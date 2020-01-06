@@ -1,0 +1,81 @@
+bit sphere0(Vector p) {{
+  return renderSphere(p, -1.338540, -4.093020, -0.908040, 0.805440);
+}}
+bit sphere1(Vector p) {{
+  return renderSphere(p, 2.599440, -1.581210, 0.871550, 4.830940);
+}}
+bit sphere2(Vector p) {{
+  return renderSphere(p, 0.127570, -1.358500, 2.191750, 2.526550);
+}}
+bit sphere3(Vector p) {{
+  return renderSphere(p, 0.000000, 0.000000, 0.000000, 57.000000);
+}}
+generator bit getSphere(Vector p) {
+if (??)  {{
+return sphere0(p);
+}}
+if (??)  {{
+return sphere1(p);
+}}
+if (??)  {{
+return sphere2(p);
+}}
+else {{
+return sphere3(p);
+}}
+
+}
+generator bit getTorus(Vector p) {
+if (??)  {{
+return torus0(p);
+}}
+else {{
+return torus1(p);
+}}
+
+}
+
+int numCuboidHints = 2;
+CuboidHint[numCuboidHints] cuboidHints = {
+new CuboidHint(theta_x = 0.074791, theta_y = -0.012900, theta_z = -0.334768,
+  xlen = 2, ylen = 3, zlen = 3,
+  xlist = {-19.0, 19.0},
+  ylist = {-4.3614922101867375, -19.0, 19.0},
+  zlist = {-0.6134107566119644, -19.0, 19.0})
+, 
+new CuboidHint(theta_x = -0.000000, theta_y = -0.005750, theta_z = -0.024763,
+  xlen = 5, ylen = 2, zlen = 2,
+  xlist = {0.8045774967621574, -0.2579791973634708, -1.084096627109616, -19.0, 19.0},
+  ylist = {-19.0, 19.0},
+  zlist = {-19.0, 19.0})
+};
+
+int numCylinderHints = 5;
+CylinderHint[numCylinderHints] cylinderHints = {
+new CylinderHint(theta_x = 0.000000, theta_y = -0.147464, theta_z = -1.465430,
+                 radius = 0.791120, y = 0.968972, z = -1.480104, xlen = 2,
+                 xlist = {-19.0, 19.0})
+, 
+new CylinderHint(theta_x = 0.000000, theta_y = -0.444273, theta_z = -1.378512,
+                 radius = 1.415600, y = 0.375414, z = -1.070478, xlen = 2,
+                 xlist = {-19.0, 19.0})
+, 
+new CylinderHint(theta_x = 0.000000, theta_y = 0.651246, theta_z = 1.543723,
+                 radius = 2.014520, y = 0.006035, z = 1.176918, xlen = 2,
+                 xlist = {-19.0, 19.0})
+, 
+new CylinderHint(theta_x = 0.000000, theta_y = -1.003113, theta_z = -1.195512,
+                 radius = 2.230110, y = -0.582459, z = -0.421108, xlen = 2,
+                 xlist = {-19.0, 19.0})
+, 
+new CylinderHint(theta_x = 0.000000, theta_y = 1.501374, theta_z = 1.049415,
+                 radius = 2.319680, y = -0.590868, z = -1.305450, xlen = 3,
+                 xlist = {0.6134107566119644, -19.0, 19.0})
+};
+
+bit torus0(Vector p) {{
+  return renderTorus(p, 0.055610, -3.122490, -1.341970, 0.304569, 0.002180, -0.952488, 0.000000, 1.261302, 0.007158, 1.562010, 0.900090);
+}}
+bit torus1(Vector p) {{
+  return renderTorus(p, 0.706170, -3.280950, -3.298870, 0.736267, -0.061310, 0.673908, 0.000000, -0.739485, -0.083079, 3.196720, 0.873710);
+}}

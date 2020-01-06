@@ -1,0 +1,9 @@
+#include "data_0_0.sk"
+#include "primitives_0_0.sk"
+
+#include "csg_solver_0_0.sk"
+
+@FromFile("/home/pc-zak/Downloads/inverseCSG/a213-du/single_torus/sketches/idx_0_0.sk")
+harness void main(int id) {
+  check(id);
+}

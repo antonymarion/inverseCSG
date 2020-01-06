@@ -1,0 +1,61 @@
+	CSG {
+	numNodes 8 
+	node0 {
+		Type leaf
+		MaterialIndex 0
+		Sphere {
+			Center 0 0 0
+			Radius 1.4291710884285338
+		}
+	}
+	node1 {
+		Type leaf
+		MaterialIndex 0
+		Sphere {
+			Center 0 1.19106 0
+			Radius 1.3100687004886422
+		}
+	}
+	node2 {
+		Type internal
+		Operator union
+		numChildren 2
+		Child node0 node1 
+	}
+	node3 {
+		Type leaf
+		MaterialIndex 0
+		Sphere {
+			Center 1.19106 0 1.19106
+			Radius 0.8337421663799907
+		}
+	}
+	node4 {
+		Type internal
+		Operator subtract
+		numChildren 2
+		Child node2 node3
+	}
+	node5 {
+		Type leaf
+		MaterialIndex 0
+		Sphere {
+			Center 1.66749 3.9305 0.952848
+			Radius 2.6202309058554363
+		}
+	}
+	node6 {
+		Type leaf
+		MaterialIndex 0
+		Sphere {
+			Center -3.9305 -2.50123 -0.119106
+			Radius 0.9527481304101311
+		}
+	}
+	node7 {
+		Type internal
+		Operator union
+		numChildren 3
+		Child node4 node5 node6 
+	}
+	}

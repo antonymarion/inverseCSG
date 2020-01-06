@@ -1,0 +1,1 @@
+Intersection(Cuboid(Vector(0, 0, 0), Vector(-5.99995, -5.99995, -5.99995), Vector(11.9999, 11.9999, 11.9999)), Union(Union(Cuboid(Vector(0, 0, 0), Vector(-4.99995, -4.99995, -4.99995), Vector(9.9999, 9.9999, 9.9999)), Cuboid(Vector(0, 0, 0), Vector(-4.99995, -4.99995, -4.99995), Vector(9.9999, 9.9999, 9.9999)))))

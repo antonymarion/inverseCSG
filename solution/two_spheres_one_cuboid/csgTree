@@ -1,0 +1,44 @@
+	CSG {
+	numNodes 5 
+	node0 {
+		Type leaf
+		MaterialIndex 0
+		Sphere {
+			Center 0 3.33638 0
+			Radius 3.336285359497895
+		}
+	}
+	node1 {
+		Type leaf
+		MaterialIndex 0
+		Sphere {
+			Center 0 0 0
+			Radius 3.336285359497895
+		}
+	}
+	node2 {
+		Type internal
+		Operator union
+		numChildren 2
+		Child node0 node1 
+	}
+	node3 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cuboid {
+				pmin 0 -3.33638 -5e-06
+				size 3.00274 4.00366 2.66911
+			}
+		}
+	}
+	node4 {
+		Type internal
+		Operator subtract
+		numChildren 2
+		Child node2 node3
+	}
+	}

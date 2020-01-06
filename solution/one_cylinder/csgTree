@@ -1,0 +1,35 @@
+	CSG {
+	numNodes 3 
+	node0 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cuboid {
+				pmin -4.99995 -4.99995 -4.99995
+				size 9.9999 9.9999 9.9999
+			}
+		}
+	}
+	node1 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cuboid {
+				pmin -5.99995 -5.99995 -5.99995
+				size 11.9999 11.9999 11.9999
+			}
+		}
+	}
+	node2 {
+		Type internal
+		Operator intersect
+		numChildren 2
+		Child node0 node1 
+	}
+	}

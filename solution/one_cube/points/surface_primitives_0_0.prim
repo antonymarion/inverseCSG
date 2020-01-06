@@ -1,0 +1,6 @@
+plane 0 0 1 5
+plane 1 0 0 5
+plane 1 0 0 -5
+plane 0 1 0 5
+plane 0 0 1 -5
+plane 0 1 0 -5
