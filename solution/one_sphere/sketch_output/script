@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ -z "$SKETCH_HOME" ];
+then
+echo "You need to set the \$SKETCH_HOME environment variable to be the path to the SKETCH distribution; This is needed to find the SKETCH header files needed to compile your program." >&2;
+exit 1;
+fi
+g++ -I "$SKETCH_HOME/include" -o one_sphere_0_0 one_sphere_0_0.cpp one_sphere_0_0_test.cpp
+./one_sphere_0_0

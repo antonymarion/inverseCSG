@@ -17,213 +17,17 @@
 		Type leaf
 		MaterialIndex 0
 		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cylinder {
-				Center -3.47 -4.552 -1.9679
-				Dir 0 0 0.8678
-				Radius 0.233
-			}
-		}
-	}
-	node2 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cuboid {
-				pmin -4.1549 -4.7879 -1.4709
-				size 1.3718 0.3958 3.0408
-			}
-		}
-	}
-	node3 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cylinder {
-				Center 4.164 3.407 -1.4709
-				Dir 0 0 3.0408
-				Radius 0.236
-			}
-		}
-	}
-	node4 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cuboid {
-				pmin 3.7091 0.2741 -1.4709
-				size 0.6938 3.0728 3.0408
-			}
-		}
-	}
-	node5 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cuboid {
-				pmin -2.7819 0.0371 -1.4709
-				size 6.2448 3.6078 3.0408
-			}
-		}
-	}
-	node6 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	-90.00021045914971	
-			YRotate 	90.00021045914971	
-			XRotate 	179.9998479605043	
-			Cylinder {
-				Center -1.561 -0.001 0.03655
-				Dir 0 0 4.7509
-				Radius 1.958
-			}
-		}
-	}
-	node7 {
-		Type internal
-		Operator subtract
-		numChildren 2
-		Child node5 node6
-	}
-	node8 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cuboid {
-				pmin 3.4661 2.9761 -1.4709
-				size 0.6848 0.6688 3.0408
-			}
-		}
-	}
-	node9 {
-		Type internal
-		Operator union
-		numChildren 4
-		Child node3 node4 node7 node8 
-	}
-	node10 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cuboid {
-				pmin -2.78245 0.03655 -1.47145
-				size 6.2459 2.9379 3.0419
-			}
-		}
-	}
-	node11 {
-		Type internal
-		Operator subtract
-		numChildren 2
-		Child node9 node10
-	}
-	node12 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cylinder {
-				Center 3.465 3.397 -18.0989
-				Dir 0 0 16.6258
-				Radius 0.244
-			}
-		}
-	}
-	node13 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cuboid {
-				pmin -2.7819 -18.0989 -1.9679
-				size 6.9318 18.3708 1.7368
-			}
-		}
-	}
-	node14 {
-		Type internal
-		Operator union
-		numChildren 2
-		Child node12 node13 
-	}
-	node15 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cuboid {
-				pmin -18.0989 0.2741 -1.9679
-				size 21.8058 3.3708 3.5378
-			}
-		}
-	}
-	node16 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cuboid {
-				pmin 3.4661 0.0371 -1.4709
-				size 14.6328 0.2348 3.0408
-			}
-		}
-	}
-	node17 {
-		Type internal
-		Operator union
-		numChildren 2
-		Child node15 node16 
-	}
-	node18 {
-		Type internal
-		Operator intersect
-		numChildren 2
-		Child node14 node17 
-	}
-	node19 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
 			ZRotate 	179.9998479605043	
 			YRotate 	0.0	
 			XRotate 	179.9998479605043	
 			Cylinder {
-				Center 4.156 3.396 -1.5699
+				Center 4.139 -4.525 -1.5699
 				Dir 0 0 3.0408
-				Radius 0.248
+				Radius 0.269
 			}
 		}
 	}
-	node20 {
+	node2 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -237,7 +41,7 @@
 			}
 		}
 	}
-	node21 {
+	node3 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -251,7 +55,21 @@
 			}
 		}
 	}
-	node22 {
+	node4 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	179.9998479605043	
+			YRotate 	0.0	
+			XRotate 	179.9998479605043	
+			Cylinder {
+				Center 4.156 3.396 -1.5699
+				Dir 0 0 3.0408
+				Radius 0.248
+			}
+		}
+	}
+	node5 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -264,7 +82,7 @@
 			}
 		}
 	}
-	node23 {
+	node6 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -277,7 +95,7 @@
 			}
 		}
 	}
-	node24 {
+	node7 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -290,84 +108,13 @@
 			}
 		}
 	}
-	node25 {
+	node8 {
 		Type internal
 		Operator union
 		numChildren 6
-		Child node19 node20 node21 node22 node23 node24 
+		Child node2 node3 node4 node5 node6 node7 
 	}
-	node26 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cuboid {
-				pmin -4.40345 -1.71345 -1.96845
-				size 0.9669 19.8129 0.4959
-			}
-		}
-	}
-	node27 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cuboid {
-				pmin -4.40345 -1.71345 -1.96845
-				size 0.2459 1.9859 1.2409
-			}
-		}
-	}
-	node28 {
-		Type internal
-		Operator union
-		numChildren 2
-		Child node26 node27 
-	}
-	node29 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cuboid {
-				pmin -3.708 0.036 -1.969
-				size 0.925 3.312 0.87
-			}
-		}
-	}
-	node30 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cylinder {
-				Center -4.162 0.273 -1.969
-				Dir 0 0 1.242
-				Radius 0.237
-			}
-		}
-	}
-	node31 {
-		Type internal
-		Operator union
-		numChildren 2
-		Child node29 node30 
-	}
-	node32 {
-		Type internal
-		Operator subtract
-		numChildren 2
-		Child node28 node31
-	}
-	node33 {
+	node9 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -381,7 +128,7 @@
 			}
 		}
 	}
-	node34 {
+	node10 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -394,7 +141,7 @@
 			}
 		}
 	}
-	node35 {
+	node11 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -407,7 +154,7 @@
 			}
 		}
 	}
-	node36 {
+	node12 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -421,39 +168,110 @@
 			}
 		}
 	}
-	node37 {
+	node13 {
 		Type internal
 		Operator subtract
 		numChildren 2
-		Child node35 node36
+		Child node11 node12
 	}
-	node38 {
+	node14 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cuboid {
+				pmin -4.40345 -1.71345 -1.96845
+				size 0.2459 1.9859 1.2409
+			}
+		}
+	}
+	node15 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cuboid {
+				pmin -4.40345 -1.71345 -1.96845
+				size 0.9669 19.8129 0.4959
+			}
+		}
+	}
+	node16 {
+		Type internal
+		Operator union
+		numChildren 2
+		Child node14 node15 
+	}
+	node17 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cuboid {
+				pmin -3.708 0.036 -1.969
+				size 0.925 3.312 0.87
+			}
+		}
+	}
+	node18 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cylinder {
+				Center -4.162 0.273 -1.969
+				Dir 0 0 1.242
+				Radius 0.237
+			}
+		}
+	}
+	node19 {
+		Type internal
+		Operator union
+		numChildren 2
+		Child node17 node18 
+	}
+	node20 {
+		Type internal
+		Operator subtract
+		numChildren 2
+		Child node16 node19
+	}
+	node21 {
 		Type internal
 		Operator union
 		numChildren 4
-		Child node32 node33 node34 node37 
+		Child node9 node10 node13 node20 
 	}
-	node39 {
+	node22 {
 		Type internal
 		Operator subtract
 		numChildren 2
-		Child node25 node38
+		Child node8 node21
 	}
-	node40 {
+	node23 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
-			ZRotate 	-88.9998261488513	
-			YRotate 	88.9998261488513	
+			ZRotate 	0.0	
+			YRotate 	0.0	
 			XRotate 	0.0	
 			Cylinder {
-				Center -1.483 -0.114 -18.0989
-				Dir 0 0 36.1978
-				Radius 2.733
+				Center 4.164 3.407 -1.4709
+				Dir 0 0 3.0408
+				Radius 0.236
 			}
 		}
 	}
-	node41 {
+	node24 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -461,39 +279,12 @@
 			YRotate 	0.0	
 			XRotate 	0.0	
 			Cuboid {
-				pmin -3.7069 -4.3899 -1.4709
-				size 21.8058 1.4508 0.3708
+				pmin -2.7819 0.0371 -1.4709
+				size 6.2448 3.6078 3.0408
 			}
 		}
 	}
-	node42 {
-		Type internal
-		Operator intersect
-		numChildren 2
-		Child node40 node41 
-	}
-	node43 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cuboid {
-				pmin -4.4029 -4.5529 -1.4709
-				size 0.6938 1.6138 3.0408
-			}
-		}
-	}
-	node44 {
-		Type leaf
-		MaterialIndex 0
-		Sphere {
-			Center 0.004 3.07 1.571
-			Radius 2.610800643480846
-		}
-	}
-	node45 {
+	node25 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -501,216 +292,70 @@
 			YRotate 	90.00021045914971	
 			XRotate 	179.9998479605043	
 			Cylinder {
-				Center -1.568 0.001 3.3491
-				Dir 0 0 1.4378
-				Radius 2.107
+				Center -1.561 -0.001 0.03655
+				Dir 0 0 4.7509
+				Radius 1.958
 			}
 		}
 	}
-	node46 {
-		Type internal
-		Operator intersect
-		numChildren 2
-		Child node44 node45 
-	}
-	node47 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cuboid {
-				pmin -18.0989 0.0371 -18.0989
-				size 22.5018 3.6078 17.8678
-			}
-		}
-	}
-	node48 {
-		Type leaf
-		MaterialIndex 0
-		Sphere {
-			Center -0.004 1.418 1.584
-			Radius 3.4288044563666795
-		}
-	}
-	node49 {
-		Type internal
-		Operator union
-		numChildren 3
-		Child node46 node47 node48 
-	}
-	node50 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cylinder {
-				Center 3.45 0.294 -1.9679
-				Dir 0 0 0.4948
-				Radius 0.264
-			}
-		}
-	}
-	node51 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cuboid {
-				pmin -2.7819 3.3491 -1.4709
-				size 6.9318 1.4378 3.0408
-			}
-		}
-	}
-	node52 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	-90.00021045914971	
-			YRotate 	90.00021045914971	
-			XRotate 	179.9998479605043	
-			Cylinder {
-				Center -1.56 -0.002 -18.0995
-				Dir 0 0 22.8869
-				Radius 1.483
-			}
-		}
-	}
-	node53 {
+	node26 {
 		Type internal
 		Operator subtract
 		numChildren 2
-		Child node51 node52
+		Child node24 node25
 	}
-	node54 {
+	node27 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
 			ZRotate 	0.0	
 			YRotate 	0.0	
 			XRotate 	0.0	
-			Cylinder {
-				Center 4.151 0.293 -1.4709
-				Dir 0 0 3.0408
-				Radius 0.257
+			Cuboid {
+				pmin 3.7091 0.2741 -1.4709
+				size 0.6938 3.0728 3.0408
 			}
 		}
 	}
-	node55 {
+	node28 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cuboid {
+				pmin 3.4661 2.9761 -1.4709
+				size 0.6848 0.6688 3.0408
+			}
+		}
+	}
+	node29 {
 		Type internal
 		Operator union
-		numChildren 3
-		Child node50 node53 node54 
+		numChildren 4
+		Child node23 node26 node27 node28 
 	}
-	node56 {
+	node30 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cuboid {
+				pmin -2.78245 0.03655 -1.47145
+				size 6.2459 2.9379 3.0419
+			}
+		}
+	}
+	node31 {
 		Type internal
-		Operator intersect
+		Operator subtract
 		numChildren 2
-		Child node49 node55 
+		Child node29 node30
 	}
-	node57 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	179.9998479605043	
-			YRotate 	0.0	
-			XRotate 	179.9998479605043	
-			Cylinder {
-				Center 4.139 -4.525 -1.5699
-				Dir 0 0 3.0408
-				Radius 0.269
-			}
-		}
-	}
-	node58 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cuboid {
-				pmin -2.7819 2.9761 -1.9679
-				size 6.2448 0.6688 0.4948
-			}
-		}
-	}
-	node59 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cuboid {
-				pmin 3.4661 -18.0989 -1.9679
-				size 0.6848 21.4458 20.0668
-			}
-		}
-	}
-	node60 {
-		Type internal
-		Operator union
-		numChildren 2
-		Child node58 node59 
-	}
-	node61 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cuboid {
-				pmin 3.4661 0.2741 -18.0989
-				size 0.2408 3.3708 16.9988
-			}
-		}
-	}
-	node62 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cuboid {
-				pmin -2.7819 2.9761 -18.0989
-				size 6.4888 0.6688 17.8678
-			}
-		}
-	}
-	node63 {
-		Type internal
-		Operator union
-		numChildren 2
-		Child node61 node62 
-	}
-	node64 {
-		Type internal
-		Operator intersect
-		numChildren 2
-		Child node60 node63 
-	}
-	node65 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cuboid {
-				pmin 2.7841 -1.7129 -1.9679
-				size 1.6188 5.0598 0.8678
-			}
-		}
-	}
-	node66 {
+	node32 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -723,7 +368,7 @@
 			}
 		}
 	}
-	node67 {
+	node33 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -731,12 +376,12 @@
 			YRotate 	0.0	
 			XRotate 	0.0	
 			Cuboid {
-				pmin -2.7819 -4.7879 -0.2289
-				size 6.4888 8.1348 1.7988
+				pmin 2.7841 -1.7129 -1.9679
+				size 1.6188 5.0598 0.8678
 			}
 		}
 	}
-	node68 {
+	node34 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -749,7 +394,7 @@
 			}
 		}
 	}
-	node69 {
+	node35 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -762,13 +407,13 @@
 			}
 		}
 	}
-	node70 {
+	node36 {
 		Type internal
 		Operator subtract
 		numChildren 2
-		Child node68 node69
+		Child node34 node35
 	}
-	node71 {
+	node37 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -782,7 +427,7 @@
 			}
 		}
 	}
-	node72 {
+	node38 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -796,87 +441,26 @@
 			}
 		}
 	}
-	node73 {
+	node39 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cuboid {
+				pmin -2.7819 -4.7879 -0.2289
+				size 6.4888 8.1348 1.7988
+			}
+		}
+	}
+	node40 {
 		Type internal
 		Operator union
 		numChildren 6
-		Child node65 node66 node67 node70 node71 node72 
+		Child node32 node33 node36 node37 node38 node39 
 	}
-	node74 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cuboid {
-				pmin 3.46555 -1.71345 -18.0995
-				size 14.6339 5.0609 17.3719
-			}
-		}
-	}
-	node75 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cylinder {
-				Center 3.451 -1.694 -1.969
-				Dir 0 0 20.069
-				Radius 0.26
-			}
-		}
-	}
-	node76 {
-		Type internal
-		Operator subtract
-		numChildren 2
-		Child node74 node75
-	}
-	node77 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cylinder {
-				Center 3.605 -0.703 -18.0995
-				Dir 0 0 17.3719
-				Radius 0.747
-			}
-		}
-	}
-	node78 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cuboid {
-				pmin 4.40455 -4.39045 -1.96845
-				size 13.6949 7.7379 1.7379
-			}
-		}
-	}
-	node79 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	-88.9998261488513	
-			YRotate 	88.9998261488513	
-			XRotate 	0.0	
-			Cylinder {
-				Center -1.483 -0.114 -18.0995
-				Dir 0 0 36.1989
-				Radius 2.733
-			}
-		}
-	}
-	node80 {
+	node41 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -890,7 +474,48 @@
 			}
 		}
 	}
-	node81 {
+	node42 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	-88.9998261488513	
+			YRotate 	88.9998261488513	
+			XRotate 	0.0	
+			Cylinder {
+				Center -1.483 -0.114 -18.0995
+				Dir 0 0 36.1989
+				Radius 2.733
+			}
+		}
+	}
+	node43 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cylinder {
+				Center 3.605 -0.703 -18.0995
+				Dir 0 0 17.3719
+				Radius 0.747
+			}
+		}
+	}
+	node44 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cuboid {
+				pmin 4.40455 -4.39045 -1.96845
+				size 13.6949 7.7379 1.7379
+			}
+		}
+	}
+	node45 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -903,7 +528,7 @@
 			}
 		}
 	}
-	node82 {
+	node46 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -917,23 +542,398 @@
 			}
 		}
 	}
-	node83 {
+	node47 {
 		Type internal
 		Operator subtract
 		numChildren 2
-		Child node81 node82
+		Child node45 node46
 	}
-	node84 {
+	node48 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cuboid {
+				pmin 3.46555 -1.71345 -18.0995
+				size 14.6339 5.0609 17.3719
+			}
+		}
+	}
+	node49 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cylinder {
+				Center 3.451 -1.694 -1.969
+				Dir 0 0 20.069
+				Radius 0.26
+			}
+		}
+	}
+	node50 {
+		Type internal
+		Operator subtract
+		numChildren 2
+		Child node48 node49
+	}
+	node51 {
 		Type internal
 		Operator union
 		numChildren 6
-		Child node76 node77 node78 node79 node80 node83 
+		Child node41 node42 node43 node44 node47 node50 
 	}
-	node85 {
+	node52 {
 		Type internal
 		Operator subtract
 		numChildren 2
-		Child node73 node84
+		Child node40 node51
+	}
+	node53 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cuboid {
+				pmin -3.7069 -4.3899 -1.4709
+				size 21.8058 1.4508 0.3708
+			}
+		}
+	}
+	node54 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	-88.9998261488513	
+			YRotate 	88.9998261488513	
+			XRotate 	0.0	
+			Cylinder {
+				Center -1.483 -0.114 -18.0989
+				Dir 0 0 36.1978
+				Radius 2.733
+			}
+		}
+	}
+	node55 {
+		Type internal
+		Operator intersect
+		numChildren 2
+		Child node53 node54 
+	}
+	node56 {
+		Type leaf
+		MaterialIndex 0
+		Sphere {
+			Center 0.004 3.07 1.571
+			Radius 2.610800643480846
+		}
+	}
+	node57 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	-90.00021045914971	
+			YRotate 	90.00021045914971	
+			XRotate 	179.9998479605043	
+			Cylinder {
+				Center -1.568 0.001 3.3491
+				Dir 0 0 1.4378
+				Radius 2.107
+			}
+		}
+	}
+	node58 {
+		Type internal
+		Operator intersect
+		numChildren 2
+		Child node56 node57 
+	}
+	node59 {
+		Type leaf
+		MaterialIndex 0
+		Sphere {
+			Center -0.004 1.418 1.584
+			Radius 3.4288044563666795
+		}
+	}
+	node60 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cuboid {
+				pmin -18.0989 0.0371 -18.0989
+				size 22.5018 3.6078 17.8678
+			}
+		}
+	}
+	node61 {
+		Type internal
+		Operator union
+		numChildren 3
+		Child node58 node59 node60 
+	}
+	node62 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cuboid {
+				pmin -2.7819 3.3491 -1.4709
+				size 6.9318 1.4378 3.0408
+			}
+		}
+	}
+	node63 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	-90.00021045914971	
+			YRotate 	90.00021045914971	
+			XRotate 	179.9998479605043	
+			Cylinder {
+				Center -1.56 -0.002 -18.0995
+				Dir 0 0 22.8869
+				Radius 1.483
+			}
+		}
+	}
+	node64 {
+		Type internal
+		Operator subtract
+		numChildren 2
+		Child node62 node63
+	}
+	node65 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cylinder {
+				Center 3.45 0.294 -1.9679
+				Dir 0 0 0.4948
+				Radius 0.264
+			}
+		}
+	}
+	node66 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cylinder {
+				Center 4.151 0.293 -1.4709
+				Dir 0 0 3.0408
+				Radius 0.257
+			}
+		}
+	}
+	node67 {
+		Type internal
+		Operator union
+		numChildren 3
+		Child node64 node65 node66 
+	}
+	node68 {
+		Type internal
+		Operator intersect
+		numChildren 2
+		Child node61 node67 
+	}
+	node69 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cuboid {
+				pmin -4.4029 -4.5529 -1.4709
+				size 0.6938 1.6138 3.0408
+			}
+		}
+	}
+	node70 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cuboid {
+				pmin -18.0989 0.2741 -1.9679
+				size 21.8058 3.3708 3.5378
+			}
+		}
+	}
+	node71 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cuboid {
+				pmin 3.4661 0.0371 -1.4709
+				size 14.6328 0.2348 3.0408
+			}
+		}
+	}
+	node72 {
+		Type internal
+		Operator union
+		numChildren 2
+		Child node70 node71 
+	}
+	node73 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cylinder {
+				Center 3.465 3.397 -18.0989
+				Dir 0 0 16.6258
+				Radius 0.244
+			}
+		}
+	}
+	node74 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cuboid {
+				pmin -2.7819 -18.0989 -1.9679
+				size 6.9318 18.3708 1.7368
+			}
+		}
+	}
+	node75 {
+		Type internal
+		Operator union
+		numChildren 2
+		Child node73 node74 
+	}
+	node76 {
+		Type internal
+		Operator intersect
+		numChildren 2
+		Child node72 node75 
+	}
+	node77 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cylinder {
+				Center -3.47 -4.552 -1.9679
+				Dir 0 0 0.8678
+				Radius 0.233
+			}
+		}
+	}
+	node78 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cuboid {
+				pmin -2.7819 2.9761 -1.9679
+				size 6.2448 0.6688 0.4948
+			}
+		}
+	}
+	node79 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cuboid {
+				pmin 3.4661 -18.0989 -1.9679
+				size 0.6848 21.4458 20.0668
+			}
+		}
+	}
+	node80 {
+		Type internal
+		Operator union
+		numChildren 2
+		Child node78 node79 
+	}
+	node81 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cuboid {
+				pmin 3.4661 0.2741 -18.0989
+				size 0.2408 3.3708 16.9988
+			}
+		}
+	}
+	node82 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cuboid {
+				pmin -2.7819 2.9761 -18.0989
+				size 6.4888 0.6688 17.8678
+			}
+		}
+	}
+	node83 {
+		Type internal
+		Operator union
+		numChildren 2
+		Child node81 node82 
+	}
+	node84 {
+		Type internal
+		Operator intersect
+		numChildren 2
+		Child node80 node83 
+	}
+	node85 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cuboid {
+				pmin -4.1549 -4.7879 -1.4709
+				size 1.3718 0.3958 3.0408
+			}
+		}
 	}
 	node86 {
 		Type leaf
@@ -1007,9 +1007,9 @@
 			YRotate 	0.0	
 			XRotate 	0.0	
 			Cylinder {
-				Center 4.171 -4.554 -1.472
-				Dir 0 0 3.043
-				Radius 0.228
+				Center 3.452 -4.528 -18.1
+				Dir 0 0 19.671
+				Radius 0.261
 			}
 		}
 	}
@@ -1021,9 +1021,9 @@
 			YRotate 	0.0	
 			XRotate 	0.0	
 			Cylinder {
-				Center 3.452 -4.528 -18.1
-				Dir 0 0 19.671
-				Radius 0.261
+				Center 4.171 -4.554 -1.472
+				Dir 0 0 3.043
+				Radius 0.228
 			}
 		}
 	}
@@ -1043,16 +1043,30 @@
 		Type leaf
 		MaterialIndex 0
 		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cuboid {
-				pmin 3.708 -4.789 -0.23
-				size 0.443 3.349 1.801
+			ZRotate 	179.9998479605043	
+			YRotate 	90.00021045914971	
+			XRotate 	179.9998479605043	
+			Cylinder {
+				Center -1.515 -0.702 4.727
+				Dir 0 0 13.373
+				Radius 0.453
 			}
 		}
 	}
 	node97 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cuboid {
+				pmin 3.465 -4.789 -1.472
+				size 0.687 3.349 1.242
+			}
+		}
+	}
+	node98 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -1066,20 +1080,6 @@
 			}
 		}
 	}
-	node98 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	179.9998479605043	
-			YRotate 	90.00021045914971	
-			XRotate 	179.9998479605043	
-			Cylinder {
-				Center -1.515 -0.702 4.727
-				Dir 0 0 13.373
-				Radius 0.453
-			}
-		}
-	}
 	node99 {
 		Type leaf
 		MaterialIndex 0
@@ -1088,8 +1088,8 @@
 			YRotate 	0.0	
 			XRotate 	0.0	
 			Cuboid {
-				pmin 3.465 -4.789 -1.472
-				size 0.687 3.349 1.242
+				pmin 3.708 -4.789 -0.23
+				size 0.443 3.349 1.801
 			}
 		}
 	}
@@ -1119,8 +1119,8 @@
 			YRotate 	0.0	
 			XRotate 	0.0	
 			Cuboid {
-				pmin -4.1549 3.3491 -1.4709
-				size 0.7188 0.2958 3.0408
+				pmin -3.7069 -4.7879 -1.9679
+				size 0.9228 1.8488 0.8678
 			}
 		}
 	}
@@ -1132,12 +1132,18 @@
 			YRotate 	0.0	
 			XRotate 	0.0	
 			Cuboid {
-				pmin -3.7069 -2.9369 -1.9679
-				size 21.8058 3.2088 20.0668
+				pmin -3.70745 -18.0995 -1.96845
+				size 0.2709 13.5449 0.4959
 			}
 		}
 	}
 	node105 {
+		Type internal
+		Operator subtract
+		numChildren 2
+		Child node103 node104
+	}
+	node106 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -1145,58 +1151,12 @@
 			YRotate 	0.0	
 			XRotate 	0.0	
 			Cuboid {
-				pmin -18.0989 -2.9369 -0.2289
-				size 13.9408 5.9108 18.3278
+				pmin -4.1549 3.3491 -1.4709
+				size 0.7188 0.2958 3.0408
 			}
 		}
-	}
-	node106 {
-		Type internal
-		Operator union
-		numChildren 2
-		Child node104 node105 
 	}
 	node107 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	179.9998479605043	
-			YRotate 	0.0	
-			XRotate 	179.9998479605043	
-			Cylinder {
-				Center 3.602 -0.701 0.2311
-				Dir 0 0 1.7368
-				Radius 0.992
-			}
-		}
-	}
-	node108 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	179.9998479605043	
-			YRotate 	90.00021045914971	
-			XRotate 	179.9998479605043	
-			Cylinder {
-				Center -1.515 -0.702 -4.9989
-				Dir 0 0 0.2708
-				Radius 0.453
-			}
-		}
-	}
-	node109 {
-		Type internal
-		Operator union
-		numChildren 2
-		Child node107 node108 
-	}
-	node110 {
-		Type internal
-		Operator intersect
-		numChildren 2
-		Child node106 node109 
-	}
-	node111 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -1210,7 +1170,79 @@
 			}
 		}
 	}
+	node108 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cuboid {
+				pmin -18.0989 -2.9369 -0.2289
+				size 13.9408 5.9108 18.3278
+			}
+		}
+	}
+	node109 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cuboid {
+				pmin -3.7069 -2.9369 -1.9679
+				size 21.8058 3.2088 20.0668
+			}
+		}
+	}
+	node110 {
+		Type internal
+		Operator union
+		numChildren 2
+		Child node108 node109 
+	}
+	node111 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	179.9998479605043	
+			YRotate 	90.00021045914971	
+			XRotate 	179.9998479605043	
+			Cylinder {
+				Center -1.515 -0.702 -4.9989
+				Dir 0 0 0.2708
+				Radius 0.453
+			}
+		}
+	}
 	node112 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	179.9998479605043	
+			YRotate 	0.0	
+			XRotate 	179.9998479605043	
+			Cylinder {
+				Center 3.602 -0.701 0.2311
+				Dir 0 0 1.7368
+				Radius 0.992
+			}
+		}
+	}
+	node113 {
+		Type internal
+		Operator union
+		numChildren 2
+		Child node111 node112 
+	}
+	node114 {
+		Type internal
+		Operator intersect
+		numChildren 2
+		Child node110 node113 
+	}
+	node115 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -1223,7 +1255,7 @@
 			}
 		}
 	}
-	node113 {
+	node116 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -1236,13 +1268,13 @@
 			}
 		}
 	}
-	node114 {
+	node117 {
 		Type internal
 		Operator union
 		numChildren 5
-		Child node103 node110 node111 node112 node113 
+		Child node106 node107 node114 node115 node116 
 	}
-	node115 {
+	node118 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -1256,7 +1288,7 @@
 			}
 		}
 	}
-	node116 {
+	node119 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -1269,7 +1301,7 @@
 			}
 		}
 	}
-	node117 {
+	node120 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -1283,13 +1315,13 @@
 			}
 		}
 	}
-	node118 {
+	node121 {
 		Type internal
 		Operator subtract
 		numChildren 2
-		Child node116 node117
+		Child node119 node120
 	}
-	node119 {
+	node122 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -1302,7 +1334,7 @@
 			}
 		}
 	}
-	node120 {
+	node123 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -1316,67 +1348,35 @@
 			}
 		}
 	}
-	node121 {
-		Type internal
-		Operator union
-		numChildren 2
-		Child node119 node120 
-	}
-	node122 {
-		Type internal
-		Operator subtract
-		numChildren 2
-		Child node118 node121
-	}
-	node123 {
-		Type internal
-		Operator union
-		numChildren 2
-		Child node115 node122 
-	}
 	node124 {
 		Type internal
-		Operator subtract
+		Operator union
 		numChildren 2
-		Child node114 node123
+		Child node122 node123 
 	}
 	node125 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cuboid {
-				pmin -3.7069 -4.7879 -1.9679
-				size 0.9228 1.8488 0.8678
-			}
-		}
+		Type internal
+		Operator subtract
+		numChildren 2
+		Child node121 node124
 	}
 	node126 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cuboid {
-				pmin -3.70745 -18.0995 -1.96845
-				size 0.2709 13.5449 0.4959
-			}
-		}
+		Type internal
+		Operator union
+		numChildren 2
+		Child node118 node125 
 	}
 	node127 {
 		Type internal
 		Operator subtract
 		numChildren 2
-		Child node125 node126
+		Child node117 node126
 	}
 	node128 {
 		Type internal
 		Operator union
 		numChildren 14
-		Child node1 node2 node11 node18 node39 node42 node43 node56 node57 node64 node85 node102 node124 node127 
+		Child node1 node22 node31 node52 node55 node68 node69 node76 node77 node84 node85 node102 node105 node127 
 	}
 	node129 {
 		Type internal

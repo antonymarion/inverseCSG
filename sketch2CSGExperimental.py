@@ -564,8 +564,8 @@ class Cuboid(Primitive):
 		strToReturn += myNodeName + ' = object.addBox();\n'
 		strToReturn += myNodeName + '.point1.set(' + str(self.min_point.x) + ',' + str(self.min_point.y) + ',' + str(
 			self.min_point.z) + ');\n'
-		strToReturn += myNodeName + '.point2.set(' + str(self.side.x) + ',' + str(self.side.y) + ',' + str(
-			self.side.z) + ');\n'
+		strToReturn += myNodeName + '.point2.set(' + str(self.side.x+self.min_point.x) + ',' + str(self.side.y+self.min_point.y) + ',' + str(
+			self.side.z+self.min_point.z) + ');\n'
 
 		strToReturn += myNodeName + '.innerRotation.center.set(0,0,0);\n'
 		strToReturn += myNodeName + '.innerRotation.axis.set(' + str(rotVec[0]) + ',' + str(rotVec[1]) + ',' + str(
@@ -642,8 +642,8 @@ class Cylinder(Primitive):
 		strToReturn += myNodeName + ' = object.addCylinder();\n'
 		strToReturn += myNodeName + '.point1.set(' + str(self.min_point.x) + ',' + str(self.min_point.y) + ',' + str(
 			self.min_point.z) + ');\n'
-		strToReturn += myNodeName + '.point2.set(' + str(self.side.x) + ',' + str(self.side.y) + ',' + str(
-			self.side.z) + ');\n'
+		strToReturn += myNodeName + '.point2.set(' + str(self.side.x+self.min_point.x) + ',' + str(self.side.y+self.min_point.y) + ',' + str(
+			self.side.z+self.min_point.z) + ');\n'
 		strToReturn += myNodeName + '.radius.set(' + str(self.radius) + ');\n'
 
 		strToReturn += myNodeName + '.innerRotation.center.set(0,0,0);\n'
@@ -956,6 +956,8 @@ def toGeometryEditor(globalIdx=None):
 	lines.append('/*FINAL CSG Conversion of Input Object*/\n')
 	lines.append(' \n')
 	for expression in expressionToStringID:
+    		
+		isVisible = globalIdx == len(expressionToStringID)-1
 		new_lines = expression.toGeometryEditor(globalIdx)
 
 		lines.append('\n')
@@ -966,6 +968,12 @@ def toGeometryEditor(globalIdx=None):
 		for line in new_lines:
 			lines.append('')
 			lines.append(line)
+			
+		lines.append('myNode'+str(globalIdx-1)+'.isVisible = '+str(isVisible))
+		lines.append('\n')
+		
+	lines.append('\n')
+	lines.append('\n')
 	lines.append('/*END Geometry Object Definition*/')
 
 	return ''.join(lines)
@@ -1084,3 +1092,4 @@ if __name__ == "__main__":
 
 	with open(geometryEditorJSONScriptFilename, 'w') as outfile:
 		outfile.write(str(geometryEditorObject))
+

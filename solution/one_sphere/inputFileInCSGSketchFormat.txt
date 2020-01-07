@@ -1,0 +1,1 @@
+Intersection(Cuboid(Vector(0, 0, 0), Vector(-5.99995, -5.99995, -5.99995), Vector(11.9999, 11.9999, 11.9999)), Union(Union(Sphere(Vector(0.01544, 0.0499, -0.00119), 25.4502), Sphere(Vector(0.01544, 0.0499, -0.00119), 25.4502))))

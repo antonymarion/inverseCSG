@@ -1,0 +1,17 @@
+	CSG {
+	numNodes 1 
+	node0 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	-4.7196023275193255	
+			YRotate 	15.501315851484907	
+			XRotate 	-33.69009024103095	
+			Cylinder {
+				Center -6.97066e-07 -2.39413e-06 -3.90485
+				Dir 0 0 7.80971
+				Radius 3.13084
+			}
+		}
+	}
+	}

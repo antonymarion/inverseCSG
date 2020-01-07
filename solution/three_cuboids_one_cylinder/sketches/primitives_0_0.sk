@@ -1,0 +1,50 @@
+bit sphere0(Vector p) {{
+  return renderSphere(p, 0.000000, 0.000000, 0.000000, 57.000099);
+}}
+generator bit getSphere(Vector p) {
+ {{
+return sphere0(p);
+}}
+
+}
+generator bit getTorus(Vector p) {
+assert false;
+return false;
+}
+
+int numCuboidHints = 5;
+CuboidHint[numCuboidHints] cuboidHints = {
+new CuboidHint(theta_x = -3.106691, theta_y = 0.069817, theta_z = 0.436333,
+  xlen = 4, ylen = 4, zlen = 4,
+  xlist = {-2.3530083579536902, 3.764749998870575, -19.000033, 19.000033},
+  ylist = {-2.360503080549437, 3.757207678257623, -19.000033, 19.000033},
+  zlist = {3.4439278853161857, -0.2266692026471483, -19.000033, 19.000033})
+, 
+new CuboidHint(theta_x = -3.089798, theta_y = 0.058403, theta_z = 0.698428,
+  xlen = 3, ylen = 2, zlen = 4,
+  xlist = {0.3080092229245117, -19.000033, 19.000033},
+  ylist = {-19.000033, 19.000033},
+  zlist = {3.4439278853161857, -0.2266692026471483, -19.000033, 19.000033})
+, 
+new CuboidHint(theta_x = -2.566199, theta_y = 0.058403, theta_z = 0.698428,
+  xlen = 3, ylen = 3, zlen = 3,
+  xlist = {0.3080092229245117, -19.000033, 19.000033},
+  ylist = {1.2848966710297722, -19.000033, 19.000033},
+  zlist = {1.8220983799730504, -19.000033, 19.000033})
+, 
+new CuboidHint(theta_x = 1.581540, theta_y = 0.601110, theta_z = 0.091785,
+  xlen = 4, ylen = 4, zlen = 4,
+  xlist = {-3.2574984370411957, -0.8104477357742786, -19.000033, 19.000033},
+  ylist = {2.379500866019498, -3.7382628982763486, -19.000033, 19.000033},
+  zlist = {-2.5224504745991014, 1.148220216037654, -19.000033, 19.000033})
+, 
+new CuboidHint(theta_x = -3.132706, theta_y = 0.077533, theta_z = 0.086397,
+  xlen = 2, ylen = 4, zlen = 4,
+  xlist = {-19.000033, 19.000033},
+  ylist = {-2.5224504745991014, 1.148220216037654, -19.000033, 19.000033},
+  zlist = {3.4439278853161857, -0.2266692026471483, -19.000033, 19.000033})
+};
+
+int numCylinderHints = 1;
+CylinderHint[numCylinderHints] cylinderHints = {null};
+

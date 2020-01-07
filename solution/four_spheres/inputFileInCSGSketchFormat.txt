@@ -1,0 +1,1 @@
+Union(Subtract(Union(Sphere(Vector(0, 0, 0), 3.21194), Sphere(Vector(0, 1.49358, 0), 2.69892)), Sphere(Vector(1.49358, 0, 1.49358), 1.09307)), Sphere(Vector(2.09101, 4.92881, 1.19486), 10.7963))

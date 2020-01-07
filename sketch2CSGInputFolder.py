@@ -4,7 +4,7 @@ import subprocess
 
 
 root_folder = sys.argv[1]
-solution_folder = os.path.join(root_folder, sys.argv[2])
+solution_folder = os.path.join(sys.argv[2])
 
 finalSolutions = sorted(os.listdir(solution_folder))
 
@@ -30,3 +30,4 @@ for i in range(len(finalSolutions)):
     
     # python sketch2CSGExperimental.py  inputFileInCSGSketchFormat csgInTreeFormatPath simplifiedSsgInTreeFormatPath geometry.js
     subprocess.run(["python3",os.path.join(root_folder,"sketch2CSGExperimental.py"), sketchFile, csgTree, csgTreeSimple, nodeOccObj])
+

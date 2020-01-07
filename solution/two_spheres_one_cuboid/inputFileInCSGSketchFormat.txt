@@ -1,0 +1,1 @@
+Subtract(Union(Sphere(Vector(0, 0, 0), 11.1308), Sphere(Vector(0, 3.33638, 0), 11.1308)), Cuboid(Vector(0, 0, 0), Vector(0, -3.33638, -5e-06), Vector(3.00274, 4.00366, 2.66911)))
