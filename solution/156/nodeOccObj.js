@@ -8,7 +8,7 @@ myNode0.point2.set(5.9999,3.2009,3.2789);
 myNode0.innerRotation.center.set(0,0,0);
 myNode0.innerRotation.axis.set(0.0,0.0,0.0);
 myNode0.innerRotation.angle.set(0.0);
-myNode0.innerTranslation.vector.set(0.0,0.0,0.0);
+myNode0.innerTranslation.vector.set(0,0,0);
 myNode0.isVisible = false;
 
 /* définition du node n°1*/
@@ -18,7 +18,7 @@ myNode1.point2.set(-0.4651000000000032,2.6679000000000004,2.7319000000000004);
 myNode1.innerRotation.center.set(0,0,0);
 myNode1.innerRotation.axis.set(0.0,0.0,0.0);
 myNode1.innerRotation.angle.set(0.0);
-myNode1.innerTranslation.vector.set(-9.282500000000002,0.000500000000000167,-0.0004999999999997229);
+myNode1.innerTranslation.vector.set(0,0,0);
 myNode1.isVisible = false;
 
 /* définition du node n°2*/
@@ -54,7 +54,7 @@ myNode5.point2.set(-1.0580000000000034,1.02795,2.73195);
 myNode5.innerRotation.center.set(0,0,0);
 myNode5.innerRotation.axis.set(0.0,0.0,0.0);
 myNode5.innerRotation.angle.set(0.0);
-myNode5.innerTranslation.vector.set(-9.578950000000003,0.0,-0.000500000000000167);
+myNode5.innerTranslation.vector.set(0,0,0);
 myNode5.isVisible = false;
 
 /* définition du node n°6*/
@@ -92,7 +92,7 @@ myNode10.point2.set(-2.8720000000000017,18.099999999999998,2.73195);
 myNode10.innerRotation.center.set(0,0,0);
 myNode10.innerRotation.axis.set(0.0,0.0,0.0);
 myNode10.innerRotation.angle.set(0.0);
-myNode10.innerTranslation.vector.set(-10.485950000000003,4.9999999998107114e-05,-0.000500000000000167);
+myNode10.innerTranslation.vector.set(0,0,0);
 myNode10.isVisible = false;
 
 /* définition du node n°11*/
@@ -140,7 +140,7 @@ myNode16.point2.set(3.8609,2.6679000000000004,-2.0820999999999996);
 myNode16.innerRotation.center.set(0,0,0);
 myNode16.innerRotation.axis.set(0.0,0.0,0.0);
 myNode16.innerRotation.angle.set(0.0);
-myNode16.innerTranslation.vector.set(1.4015,0.000500000000000167,-2.4074999999999998);
+myNode16.innerTranslation.vector.set(0,0,0);
 myNode16.isVisible = false;
 
 /* définition du node n°17*/
@@ -192,7 +192,7 @@ myNode22.point2.set(5.0019,2.6679000000000004,-2.0820999999999996);
 myNode22.innerRotation.center.set(0,0,0);
 myNode22.innerRotation.axis.set(0.0,0.0,0.0);
 myNode22.innerRotation.angle.set(0.0);
-myNode22.innerTranslation.vector.set(4.4315,0.8200000000000001,-2.4074999999999998);
+myNode22.innerTranslation.vector.set(0,0,0);
 myNode22.isVisible = false;
 
 /* définition du node n°23*/
@@ -224,7 +224,7 @@ myNode26.point2.set(5.0019,1.0278999999999998,-2.0820999999999996);
 myNode26.innerRotation.center.set(0,0,0);
 myNode26.innerRotation.axis.set(0.0,0.0,0.0);
 myNode26.innerRotation.angle.set(0.0);
-myNode26.innerTranslation.vector.set(4.4315,-0.8195000000000001,-2.4074999999999998);
+myNode26.innerTranslation.vector.set(0,0,0);
 myNode26.isVisible = false;
 
 /* définition du node n°27*/

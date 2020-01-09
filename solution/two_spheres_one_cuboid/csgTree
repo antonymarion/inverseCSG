@@ -4,7 +4,7 @@
 		Type leaf
 		MaterialIndex 0
 		Sphere {
-			Center 0 3.33638 0
+			Center 0 0 0
 			Radius 3.336285359497895
 		}
 	}
@@ -12,7 +12,7 @@
 		Type leaf
 		MaterialIndex 0
 		Sphere {
-			Center 0 0 0
+			Center 0 3.33638 0
 			Radius 3.336285359497895
 		}
 	}

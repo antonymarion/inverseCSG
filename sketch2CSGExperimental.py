@@ -598,7 +598,7 @@ class Cuboid(Primitive):
 			'.innerRotation.angle.set(' + str(math.degrees(LA.norm(rotVec))) + ');\n'
 
 		strToReturn += myNodeName + \
-			'.innerTranslation.vector.set('+ str(t[0]) + ',' + str(t[1]) + ',' + str(t[2]) + ');\n'
+			'.innerTranslation.vector.set(0,0,0);\n'
 
 
 		return strToReturn

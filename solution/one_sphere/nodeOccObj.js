@@ -14,7 +14,7 @@ myNode1.point2.set(5.99995,5.99995,5.99995);
 myNode1.innerRotation.center.set(0,0,0);
 myNode1.innerRotation.axis.set(0.0,0.0,0.0);
 myNode1.innerRotation.angle.set(0.0);
-myNode1.innerTranslation.vector.set(0.0,0.0,0.0);
+myNode1.innerTranslation.vector.set(0,0,0);
 myNode1.isVisible = false;
 
 /* définition du node n°2*/
