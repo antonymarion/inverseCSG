@@ -10,6 +10,9 @@ Please find below screenshots of example 39 - Solution available in solution fol
 </p>
 <p align="center">
    <img width="400" src="https://github.com/antonymarion/inverseCSG/raw/master/meshlab_box.png">
+ </p>
+  
+<p align="center">
     <img width="400" src="https://github.com/antonymarion/inverseCSG/raw/master/meshlab_box_rear.png">
 </p>
 
@@ -19,6 +22,8 @@ Please find below screenshots of example 39 - Solution available in solution fol
 </p>
 <p align="center">
    <img width="400" src="https://github.com/antonymarion/inverseCSG/raw/master/nodeOCC_box.png">
+</p>
+<p align="center">
    <img width="400" src="https://github.com/antonymarion/inverseCSG/raw/master/nodeOCC_box_rear.png">
 </p>
 
