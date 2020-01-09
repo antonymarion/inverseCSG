@@ -8,7 +8,6 @@ Please find below screenshots of example 39 - Solution availables in solution fo
 <p align="center">
    <b>3200 vertices, 6600 faces</b>
 </p>
-<br/><br/>
 <p align="center">
    <img width="400" src="https://github.com/antonymarion/inverseCSG/raw/master/meshlab_box.png">
 </p>
@@ -17,7 +16,6 @@ Please find below screenshots of example 39 - Solution availables in solution fo
 <p align="center">
  <b>150 items among following items (box, cylinder, sphere, fuse, common)</b>
 </p>
-<br/><br/>
 <p align="center">
    <img width="400" src="https://github.com/antonymarion/inverseCSG/raw/master/nodeOCC_box.png">
 </p>
