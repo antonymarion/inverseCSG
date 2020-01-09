@@ -12,16 +12,16 @@
 		Type leaf
 		MaterialIndex 0
 		Sphere {
-			Center 0 1.49358 0
-			Radius 1.6428390061110676
+			Center 0 0 0
+			Radius 1.7921886061461276
 		}
 	}
 	node2 {
 		Type leaf
 		MaterialIndex 0
 		Sphere {
-			Center 0 0 0
-			Radius 1.7921886061461276
+			Center 0 1.49358 0
+			Radius 1.6428390061110676
 		}
 	}
 	node3 {

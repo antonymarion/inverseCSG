@@ -9,14 +9,14 @@ myNode0.isVisible = false;
 
 /* définition du node n°1*/
 const myNode1 = object.addSphere();
-myNode1.center.set(0,1.49358,0);
-myNode1.radius.set(1.6428390061110676);
+myNode1.center.set(0,0,0);
+myNode1.radius.set(1.7921886061461276);
 myNode1.isVisible = false;
 
 /* définition du node n°2*/
 const myNode2 = object.addSphere();
-myNode2.center.set(0,0,0);
-myNode2.radius.set(1.7921886061461276);
+myNode2.center.set(0,1.49358,0);
+myNode2.radius.set(1.6428390061110676);
 myNode2.isVisible = false;
 
 /* définition du node n°3*/

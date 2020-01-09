@@ -108,9 +108,9 @@
 			YRotate 	0.0	
 			XRotate 	0.0	
 			Cylinder {
-				Center -4.608 4.627 -2.75
-				Dir 0 0 3
-				Radius 1.518
+				Center 4.603 -4.614 -2.75
+				Dir 0 0 21.75
+				Radius 1.517
 			}
 		}
 	}
@@ -122,9 +122,9 @@
 			YRotate 	0.0	
 			XRotate 	0.0	
 			Cylinder {
-				Center 4.603 -4.614 -2.75
-				Dir 0 0 21.75
-				Radius 1.517
+				Center -4.608 4.627 -2.75
+				Dir 0 0 3
+				Radius 1.518
 			}
 		}
 	}
@@ -168,27 +168,13 @@
 			YRotate 	0.0	
 			XRotate 	0.0	
 			Cylinder {
-				Center 3.898 2.249 -19
-				Dir 0 0 19.25
-				Radius 0.504
-			}
-		}
-	}
-	node16 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	0.0	
-			YRotate 	0.0	
-			XRotate 	0.0	
-			Cylinder {
 				Center -4.62 -4.603 -19
 				Dir 0 0 19.25
 				Radius 1.518
 			}
 		}
 	}
-	node17 {
+	node16 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -202,7 +188,7 @@
 			}
 		}
 	}
-	node18 {
+	node17 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -213,6 +199,20 @@
 				Center -2.25 3.899 -19
 				Dir 0 0 19.25
 				Radius 0.498
+			}
+		}
+	}
+	node18 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	0.0	
+			YRotate 	0.0	
+			XRotate 	0.0	
+			Cylinder {
+				Center 3.898 2.249 -19
+				Dir 0 0 19.25
+				Radius 0.504
 			}
 		}
 	}

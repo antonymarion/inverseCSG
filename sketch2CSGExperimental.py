@@ -51,7 +51,7 @@ def frozenVersion(e):
 		return FrozenSetIntersection(e)
 
 	else:
-    		return e
+		return e
 
 
 def unfrozenVersion(e):
@@ -595,7 +595,7 @@ class Cuboid(Primitive):
 			str(rotVec[2]) + ');\n'
 
 		strToReturn += myNodeName + \
-			'.innerRotation.angle.set(' + str(LA.norm(rotVec)) + ');\n'
+			'.innerRotation.angle.set(' + str(math.degrees(LA.norm(rotVec))) + ');\n'
 
 		strToReturn += myNodeName + \
 			'.innerTranslation.vector.set('+ str(t[0]) + ',' + str(t[1]) + ',' + str(t[2]) + ');\n'
@@ -681,7 +681,7 @@ class Cylinder(Primitive):
 		strToReturn += myNodeName + '.innerRotation.axis.set(' + str(rotVec[0]) + ',' + str(rotVec[1]) + ',' + str(
 			rotVec[2]) + ');\n'
 		strToReturn += myNodeName + \
-			'.innerRotation.angle.set(' + str(LA.norm(rotVec)) + ');\n'
+			'.innerRotation.angle.set(' + str(math.degrees(LA.norm(rotVec))) + ');\n'
 
 		return strToReturn
 
@@ -755,7 +755,7 @@ class Sphere(Primitive):
 
 		# strToReturn += myNodeName + '.innerRotation.center.set(0,0,0);\n'
 		# strToReturn += myNodeName + '.innerRotation.axis.set(' + rotVec + ');\n'
-		# strToReturn += myNodeName + '.innerRotation.angle.set(' + LA.norm(rotVec) + ');\n'
+		# strToReturn += myNodeName + '.innerRotation.angle.set(' + math.degrees(LA.norm(rotVec)) + ');\n'
 
 		return strToReturn
 
@@ -857,7 +857,7 @@ class Union(Expression):
 
 		# strToReturn += myNodeName + '.innerRotation.center.set(0,0,0);\n'
 		# strToReturn += myNodeName + '.innerRotation.axis.set(' + rotVec[0] + ',' + rotVec[1]+ ',' + rotVec[2] + ');\n'
-		# strToReturn += myNodeName + '.innerRotation.angle.set(' + str(LA.norm(rotVec)) + ');\n'
+		# strToReturn += myNodeName + '.innerRotation.angle.set(' + str(math.degrees(LA.norm(rotVec))) + ');\n'
 
 		return strToReturn
 
@@ -915,7 +915,7 @@ class Intersection(Expression):
 
 		# strToReturn += myNodeName + '.innerRotation.center.set(0,0,0);\n'
 		# strToReturn += myNodeName + '.innerRotation.axis.set(' + rotVec[0] + ',' + rotVec[1]+ ',' + rotVec[2] + ');\n'
-		# strToReturn += myNodeName + '.innerRotation.angle.set(' + str(LA.norm(rotVec)) + ');\n'
+		# strToReturn += myNodeName + '.innerRotation.angle.set(' + str(math.degrees(LA.norm(rotVec))) + ');\n'
 
 		return strToReturn
 
@@ -961,7 +961,7 @@ class Subtract(Expression):
 
 		# strToReturn += myNodeName + '.innerRotation.center.set(0,0,0);\n'
 		# strToReturn += myNodeName + '.innerRotation.axis.set(' + rotVec[0] + ',' + rotVec[1]+ ',' + rotVec[2] + ');\n'
-		# strToReturn += myNodeName + '.innerRotation.angle.set(' + str(LA.norm(rotVec)) + ');\n'
+		# strToReturn += myNodeName + '.innerRotation.angle.set(' + str(math.degrees(LA.norm(rotVec))) + ');\n'
 
 		return strToReturn
 

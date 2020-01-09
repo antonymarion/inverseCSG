@@ -4,8 +4,8 @@
 		Type leaf
 		MaterialIndex 0
 		Sphere {
-			Center 0 0 0
-			Radius 1.1325899522775222
+			Center 1.32147 3.1149 0.755127
+			Radius 2.0764994582229006
 		}
 	}
 	node1 {
@@ -17,12 +17,20 @@
 		}
 	}
 	node2 {
+		Type leaf
+		MaterialIndex 0
+		Sphere {
+			Center 0 0 0
+			Radius 1.1325899522775222
+		}
+	}
+	node3 {
 		Type internal
 		Operator union
 		numChildren 2
-		Child node0 node1 
+		Child node1 node2 
 	}
-	node3 {
+	node4 {
 		Type leaf
 		MaterialIndex 0
 		Sphere {
@@ -30,13 +38,13 @@
 			Radius 0.6607359533126679
 		}
 	}
-	node4 {
+	node5 {
 		Type internal
 		Operator subtract
 		numChildren 2
-		Child node2 node3
+		Child node3 node4
 	}
-	node5 {
+	node6 {
 		Type leaf
 		MaterialIndex 0
 		Sphere {
@@ -44,7 +52,7 @@
 			Radius 0.7550271518296544
 		}
 	}
-	node6 {
+	node7 {
 		Type leaf
 		MaterialIndex 0
 		Sphere {
@@ -52,19 +60,11 @@
 			Radius 1.8877208480069292
 		}
 	}
-	node7 {
-		Type leaf
-		MaterialIndex 0
-		Sphere {
-			Center 1.32147 3.1149 0.755127
-			Radius 2.0764994582229006
-		}
-	}
 	node8 {
 		Type internal
 		Operator union
 		numChildren 4
-		Child node4 node5 node6 node7 
+		Child node0 node5 node6 node7 
 	}
 	node9 {
 		Type leaf

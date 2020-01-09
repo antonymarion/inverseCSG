@@ -7,7 +7,7 @@ myNode0.point1.set(-1.45148,-4.3545,-2.90307);
 myNode0.point2.set(1.4515099999999999,4.354509999999999,2.90309);
 myNode0.innerRotation.center.set(0,0,0);
 myNode0.innerRotation.axis.set(1.6694568005173018,0.47606844624381356,-0.11213259496499425);
-myNode0.innerRotation.angle.set(1.73962665338171);
+myNode0.innerRotation.angle.set(99.67326516723975);
 myNode0.innerTranslation.vector.set(1.4999999999876223e-05,4.999999999810711e-06,1.0000000000065512e-05);
 myNode0.isVisible = false;
 

@@ -81,9 +81,9 @@ myNode8.isVisible = false;
 
 /* définition du node n°9*/
 const myNode9 = object.addCylinder();
-myNode9.point1.set(-4.608,4.627,-2.75);
-myNode9.point2.set(-4.608,4.627,0.25);
-myNode9.radius.set(1.518);
+myNode9.point1.set(4.603,-4.614,-2.75);
+myNode9.point2.set(4.603,-4.614,19.0);
+myNode9.radius.set(1.517);
 myNode9.innerRotation.center.set(0,0,0);
 myNode9.innerRotation.axis.set(0.0,0.0,0.0);
 myNode9.innerRotation.angle.set(0.0);
@@ -91,9 +91,9 @@ myNode9.isVisible = false;
 
 /* définition du node n°10*/
 const myNode10 = object.addCylinder();
-myNode10.point1.set(4.603,-4.614,-2.75);
-myNode10.point2.set(4.603,-4.614,19.0);
-myNode10.radius.set(1.517);
+myNode10.point1.set(-4.608,4.627,-2.75);
+myNode10.point2.set(-4.608,4.627,0.25);
+myNode10.radius.set(1.518);
 myNode10.innerRotation.center.set(0,0,0);
 myNode10.innerRotation.axis.set(0.0,0.0,0.0);
 myNode10.innerRotation.angle.set(0.0);
@@ -129,9 +129,9 @@ myNode14.isVisible = false;
 
 /* définition du node n°15*/
 const myNode15 = object.addCylinder();
-myNode15.point1.set(3.898,2.249,-19);
-myNode15.point2.set(3.898,2.249,0.25);
-myNode15.radius.set(0.504);
+myNode15.point1.set(-4.62,-4.603,-19);
+myNode15.point2.set(-4.62,-4.603,0.25);
+myNode15.radius.set(1.518);
 myNode15.innerRotation.center.set(0,0,0);
 myNode15.innerRotation.axis.set(0.0,0.0,0.0);
 myNode15.innerRotation.angle.set(0.0);
@@ -139,9 +139,9 @@ myNode15.isVisible = false;
 
 /* définition du node n°16*/
 const myNode16 = object.addCylinder();
-myNode16.point1.set(-4.62,-4.603,-19);
-myNode16.point2.set(-4.62,-4.603,0.25);
-myNode16.radius.set(1.518);
+myNode16.point1.set(4.59,4.608,-2.75);
+myNode16.point2.set(4.59,4.608,19.0);
+myNode16.radius.set(1.502);
 myNode16.innerRotation.center.set(0,0,0);
 myNode16.innerRotation.axis.set(0.0,0.0,0.0);
 myNode16.innerRotation.angle.set(0.0);
@@ -149,9 +149,9 @@ myNode16.isVisible = false;
 
 /* définition du node n°17*/
 const myNode17 = object.addCylinder();
-myNode17.point1.set(4.59,4.608,-2.75);
-myNode17.point2.set(4.59,4.608,19.0);
-myNode17.radius.set(1.502);
+myNode17.point1.set(-2.25,3.899,-19);
+myNode17.point2.set(-2.25,3.899,0.25);
+myNode17.radius.set(0.498);
 myNode17.innerRotation.center.set(0,0,0);
 myNode17.innerRotation.axis.set(0.0,0.0,0.0);
 myNode17.innerRotation.angle.set(0.0);
@@ -159,9 +159,9 @@ myNode17.isVisible = false;
 
 /* définition du node n°18*/
 const myNode18 = object.addCylinder();
-myNode18.point1.set(-2.25,3.899,-19);
-myNode18.point2.set(-2.25,3.899,0.25);
-myNode18.radius.set(0.498);
+myNode18.point1.set(3.898,2.249,-19);
+myNode18.point2.set(3.898,2.249,0.25);
+myNode18.radius.set(0.504);
 myNode18.innerRotation.center.set(0,0,0);
 myNode18.innerRotation.axis.set(0.0,0.0,0.0);
 myNode18.innerRotation.angle.set(0.0);
