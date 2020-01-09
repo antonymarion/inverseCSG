@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.com/antonymarion/inverseCSG.svg?branch=master)](https://travis-ci.com/antonymarion/inverseCSG)
 
 
-Please find below screenshots of example 39 - Solution availables in solution folder
+Please find below screenshots of example 39 - Solution available in solution folder
 
 
 <p align="center">
