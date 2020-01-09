@@ -10,7 +10,7 @@ Please find below screenshots of example 39 - Solution availables in solution fo
 
 **150 items among following basic primitives (box,cylinder,sphere) and following boolean operation (fuse, common)**
 <p align="center">
-![box_vertices](nodeOCC_box.png)
+   <img width="460" height="300" src="https://github.com/antonymarion/inverseCSG/raw/master/nodeOCC_box.png">
 </p>
 
 
