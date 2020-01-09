@@ -5,10 +5,10 @@
 Please find below screenshots of example 39 - Solution availables in solution folder
 
 
-**3200 vertices, 6600 faces
+**3200 vertices, 6600 faces**
 ![box_vertices](meshlab_box.png)
 
-**150 items among following basic primitives (box,cylinder,sphere) and following boolean operation (fuse, common)
+**150 items among following basic primitives (box,cylinder,sphere) and following boolean operation (fuse, common)**
 ![box_vertices](nodeOCC_box.png)
 
 
