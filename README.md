@@ -5,12 +5,21 @@
 Please find below screenshots of example 39 - Solution availables in solution folder
 
 
-**3200 vertices, 6600 faces**
-![box_vertices](meshlab_box.png)
-
-**150 items among following basic primitives (box,cylinder,sphere) and following boolean operation (fuse, common)**
 <p align="center">
-   <img width="460" height="300" src="https://github.com/antonymarion/inverseCSG/raw/master/nodeOCC_box.png">
+   <b>3200 vertices, 6600 faces</b>
+</p>
+<br/><br/>
+<p align="center">
+   <img width="400" src="https://github.com/antonymarion/inverseCSG/raw/master/meshlab_box.png">
+</p>
+
+
+<p align="center">
+ <b>150 items among following items (box, cylinder, sphere, fuse, common)</b>
+</p>
+<br/><br/>
+<p align="center">
+   <img width="400" src="https://github.com/antonymarion/inverseCSG/raw/master/nodeOCC_box.png">
 </p>
 
 
