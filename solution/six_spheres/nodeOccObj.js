@@ -3,66 +3,68 @@
 
 /* définition du node n°0*/
 const myNode0 = object.addSphere();
-myNode0.center.set(-3.1149,-1.98221,-0.094391);
-myNode0.radius.set(0.7550271518296544);
-myNode0.isVisible = False
+myNode0.center.set(1.32147,3.1149,0.755127);
+myNode0.radius.set(2.0764994582229006);
+myNode0.isVisible = false;
 
 /* définition du node n°1*/
 const myNode1 = object.addSphere();
-myNode1.center.set(1.41586,-2.92612,3.77564);
-myNode1.radius.set(1.8877208480069292);
-myNode1.isVisible = False
+myNode1.center.set(-3.1149,-1.98221,-0.094391);
+myNode1.radius.set(0.7550271518296544);
+myNode1.isVisible = false;
 
 /* définition du node n°2*/
 const myNode2 = object.addSphere();
-myNode2.center.set(1.32147,3.1149,0.755127);
-myNode2.radius.set(2.0764994582229006);
-myNode2.isVisible = False
+myNode2.center.set(0,0.943909,0);
+myNode2.radius.set(1.0382003660180437);
+myNode2.isVisible = false;
 
 /* définition du node n°3*/
 const myNode3 = object.addSphere();
 myNode3.center.set(0,0,0);
 myNode3.radius.set(1.1325899522775222);
-myNode3.isVisible = False
+myNode3.isVisible = false;
 
 /* définition du node n°4*/
-const myNode4 = object.addSphere();
-myNode4.center.set(0,0.943909,0);
-myNode4.radius.set(1.0382003660180437);
-myNode4.isVisible = False
+const myNode4 = object.addFuseOperation();
+myNode4.leftArg.set(myNode2);
+myNode4.rightArg.set(myNode3);
+myNode4.isVisible = false;
 
 /* définition du node n°5*/
-const myNode5 = object.addFuseOperation();
-myNode5.leftArg.set(myNode3);
-myNode5.rightArg.set(myNode4);
-myNode5.isVisible = False
+const myNode5 = object.addSphere();
+myNode5.center.set(0.943909,0,0.943909);
+myNode5.radius.set(0.6607359533126679);
+myNode5.isVisible = false;
 
 /* définition du node n°6*/
-const myNode6 = object.addSphere();
-myNode6.center.set(0.943909,0,0.943909);
-myNode6.radius.set(0.6607359533126679);
-myNode6.isVisible = False
+const myNode6 = object.addCutOperation();
+myNode6.leftArg.set(myNode4);
+myNode6.rightArg.set(myNode5);
+myNode6.isVisible = false;
 
 /* définition du node n°7*/
-const myNode7 = object.addCutOperation();
-myNode7.leftArg.set(myNode5);
-myNode7.rightArg.set(myNode6);
-myNode7.isVisible = False
+const myNode7 = object.addSphere();
+myNode7.center.set(1.41586,-2.92612,3.77564);
+myNode7.radius.set(1.8877208480069292);
+myNode7.isVisible = false;
 
 /* définition du node n°8*/
-const myNode8_1 = object.addFuseOperation();
-myNode8_1.leftArg.set(myNode0);
-myNode8_1.rightArg.set(myNode0);
+const myNode8_1 = myNode0.clone();
+myNode8_1.isVisible = false;
 const myNode8_2 = object.addFuseOperation();
 myNode8_2.leftArg.set(myNode8_1);
 myNode8_2.rightArg.set(myNode1);
+myNode8_2.isVisible = false;
 const myNode8_3 = object.addFuseOperation();
 myNode8_3.leftArg.set(myNode8_2);
-myNode8_3.rightArg.set(myNode2);
+myNode8_3.rightArg.set(myNode6);
+myNode8_3.isVisible = false;
 myNode8 = object.addFuseOperation();
 myNode8.leftArg.set(myNode8_3);
 myNode8.rightArg.set(myNode7);
-myNode8.isVisible = True
+myNode8.isVisible = false;
+myNode8.isVisible = true;
 
 
 /*END Geometry Object Definition*/

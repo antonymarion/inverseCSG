@@ -50,9 +50,8 @@ def frozenVersion(e):
 
 		return FrozenSetIntersection(e)
 
-
 	else:
-		return e
+    		return e
 
 
 def unfrozenVersion(e):
@@ -60,8 +59,6 @@ def unfrozenVersion(e):
 		return SetUnion(e)
 	if isinstance(e, FrozenSetIntersection):
 		return SetIntersection(e)
-
-
 
 	else:
 		return e
@@ -147,7 +144,7 @@ def simplify(obj0, obj1, operatorType):
 		# Distributive laws:
 
 		if (isinstance(obj0, FrozenSetIntersection)) and \
-				(isinstance(obj1, FrozenSetIntersection)):
+                        (isinstance(obj1, FrozenSetIntersection)):
 
 			intersection = frozenVersion(obj0.intersection(obj1))
 			union_difference = frozenVersion(obj0.union(obj1).difference(intersection))
@@ -157,12 +154,12 @@ def simplify(obj0, obj1, operatorType):
 				return (FrozenSetIntersection([intersection, FrozenSetUnion(union_difference)]), True)
 
 		if isinstance(obj0, FrozenSetIntersection) and \
-				isinstance(obj1, Primitive):
+                        isinstance(obj1, Primitive):
 			if obj1 in obj0:
 				return (obj1, True)
 
 		if isinstance(obj1, FrozenSetIntersection) and \
-				isinstance(obj0, Primitive):
+                        isinstance(obj0, Primitive):
 			if obj0 in obj1:
 				return (obj0, True)
 
@@ -170,21 +167,21 @@ def simplify(obj0, obj1, operatorType):
 		# First, either the first object must be a subtraction, and the second object a set, frozenset, or a primitive
 
 		if isinstance(obj0, SetSubtract) and \
-				((isinstance(obj1, Primitive) and obj0[1] == obj1) or \
-				 (isinstance(obj1, FrozenSetUnion) and obj0[1] in obj1)):
+                    ((isinstance(obj1, Primitive) and obj0[1] == obj1) or
+                     (isinstance(obj1, FrozenSetUnion) and obj0[1] in obj1)):
 			return (FrozenSetUnion([obj1, obj0[0]]), True)
 		if isinstance(obj1, SetSubtract) and \
-				((isinstance(obj0, Primitive) and obj1[1] == obj0) or \
-				 (isinstance(obj0, FrozenSetUnion) and obj1[1] in obj0)):
+                    ((isinstance(obj0, Primitive) and obj1[1] == obj0) or
+                     (isinstance(obj0, FrozenSetUnion) and obj1[1] in obj0)):
 			return (FrozenSetUnion([obj0, obj1[0]]), True)
 
 		# Law 11
 		if isinstance(obj0, SetSubtract) and isinstance(obj1, SetSubtract) and \
-				obj0[0] == obj1[0]:
+                        obj0[0] == obj1[0]:
 			return (SetSubtract(obj0[0], FrozenSetIntersection([obj0[1], obj1[1]])), True)
 
 		if isinstance(obj0, SetSubtract) and isinstance(obj1, SetSubtract) and \
-				obj0[1] == obj1[1]:
+                        obj0[1] == obj1[1]:
 			return (SetSubtract(FrozenSetUnion([obj0[0], obj1[0]]), obj0[1]), True)
 
 		'''
@@ -198,7 +195,7 @@ def simplify(obj0, obj1, operatorType):
 		'''
 
 		if isinstance(obj0, FrozenSetIntersection) and isinstance(obj1, SetSubtract) and \
-				obj1[0] in obj0:
+                        obj1[0] in obj0:
 			first_term = obj1[0]
 			second_term = obj1[1]
 			third_term = obj0.difference([first_term])
@@ -206,7 +203,7 @@ def simplify(obj0, obj1, operatorType):
 			return (SetSubtract(first_term, SetSubtract(second_term, third_term)), True)
 
 		if isinstance(obj1, FrozenSetIntersection) and isinstance(obj0, SetSubtract) and \
-				obj0[0] in obj1:
+                        obj0[0] in obj1:
 			first_term = obj0[0]
 			second_term = obj0[1]
 			third_term = obj1.difference([first_term])
@@ -221,7 +218,7 @@ def simplify(obj0, obj1, operatorType):
 		# Distributive laws:
 
 		if (isinstance(obj0, FrozenSetUnion)) and \
-				(isinstance(obj1, FrozenSetUnion)):
+                        (isinstance(obj1, FrozenSetUnion)):
 
 			intersection = frozenVersion(obj0.intersection(obj1))
 
@@ -233,12 +230,12 @@ def simplify(obj0, obj1, operatorType):
 				return (FrozenSetUnion([intersection, FrozenSetIntersection(union_difference)]), True)
 
 		if isinstance(obj0, FrozenSetUnion) and \
-				isinstance(obj1, Primitive):
+                        isinstance(obj1, Primitive):
 			if obj1 in obj0:
 				return (obj1, True)
 
 		if isinstance(obj1, FrozenSetUnion) and \
-				isinstance(obj0, Primitive):
+                        isinstance(obj0, Primitive):
 			if obj0 in obj1:
 				return (obj0, True)
 
@@ -263,29 +260,27 @@ def simplify(obj0, obj1, operatorType):
 		"""
 		# TODO: THis is a simplified version, since the more complex version is a bit tricky
 		if isinstance(obj0, SetSubtract) and \
-				(isinstance(obj1, Primitive) and obj0[1] == obj1):
+                        (isinstance(obj1, Primitive) and obj0[1] == obj1):
 			return (None, True)
 		if isinstance(obj1, SetSubtract) and \
-				(isinstance(obj0, Primitive) and obj1[1] == obj0):
+                        (isinstance(obj0, Primitive) and obj1[1] == obj0):
 			return (None, True)
 
 		if isinstance(obj0, SetSubtract) and \
-				(isinstance(obj1, Primitive) and obj0[0] == obj1):
+                        (isinstance(obj1, Primitive) and obj0[0] == obj1):
 			return (obj0, True)
 		if isinstance(obj1, SetSubtract) and \
-				(isinstance(obj0, Primitive) and obj1[0] == obj0):
+                        (isinstance(obj0, Primitive) and obj1[0] == obj0):
 			return (obj1, True)
 
 		# Law 11
 
 		if isinstance(obj0, SetSubtract) and isinstance(obj1, SetSubtract) and \
-				obj0[0] == obj1[0]:
+                        obj0[0] == obj1[0]:
 			return (SetSubtract(obj0[0], FrozenSetUnion([obj0[1], obj1[1]])), True)
 
 		# Default case
 		return (FrozenSetIntersection([obj0, obj1]), False)
-
-
 
 	elif isinstance(operatorType, SetSubtract):
 		raise Exception('This should never happen - cannot process set subtraction')
@@ -464,7 +459,8 @@ class Primitive(Expression):
 		inst.__init__(*args)
 		if not inst.checkIfExists():
 			primitives.add(inst)
-			geometryEditorObjectScript[inst.toGeometryEditor(globalIdx)] = 'node' + str(len(expressionToStringID))
+			geometryEditorObjectScript[inst.toGeometryEditor(
+				globalIdx)] = 'node' + str(len(expressionToStringID))
 			expressionToStringID[inst] = 'node' + str(len(expressionToStringID))
 			return inst
 		else:
@@ -552,25 +548,58 @@ class Cuboid(Primitive):
 
 	def toGeometryEditor(self, globalIdx=None):
 
-		# rotation is sufficient to define transformations
-		# (no need to use translation given minPt and Side of Box)
-		r = R.from_euler('xyz', [self.euler_angles.x, self.euler_angles.y, self.euler_angles.z], degrees=False)
+
+		r = R.from_euler('xyz', [self.euler_angles.x,
+                           self.euler_angles.y, self.euler_angles.z], degrees=False)
 		rotVec = r.as_rotvec()
+		t = [self.min_point.x+self.side.x/2,self.min_point.y+self.side.y/2,self.min_point.z+self.side.z/2]
+
 
 		myNodeName = 'myNode' + str(globalIdx)
 		strToReturn = 'const '
 		globalIdx += 1
 
 		strToReturn += myNodeName + ' = object.addBox();\n'
-		strToReturn += myNodeName + '.point1.set(' + str(self.min_point.x) + ',' + str(self.min_point.y) + ',' + str(
-			self.min_point.z) + ');\n'
-		strToReturn += myNodeName + '.point2.set(' + str(self.side.x+self.min_point.x) + ',' + str(self.side.y+self.min_point.y) + ',' + str(
-			self.side.z+self.min_point.z) + ');\n'
+
+		print('box dim')
+		print(self.side.x)
+		print(self.side.y)
+		print(self.side.z)
+
+		print('box t')
+		print(t[0])
+		print(t[1])
+		print(t[2])
+
+
+		print('box r')
+		print(rotVec[0])
+		print(rotVec[1])
+		print(rotVec[2])
+
+
+		strToReturn += myNodeName + '.point1.set(' + \
+			str(self.min_point.x) + ',' + \
+			str(self.min_point.y) + ',' + \
+			str(self.min_point.z) + ');\n'
+
+		strToReturn += myNodeName + '.point2.set(' +  \
+            str(self.side.x+self.min_point.x) + ',' + \
+            str(self.side.y+self.min_point.y) + ',' + \
+            str(self.side.z+self.min_point.z) + ');\n'
 
 		strToReturn += myNodeName + '.innerRotation.center.set(0,0,0);\n'
-		strToReturn += myNodeName + '.innerRotation.axis.set(' + str(rotVec[0]) + ',' + str(rotVec[1]) + ',' + str(
-			rotVec[2]) + ');\n'
-		strToReturn += myNodeName + '.innerRotation.angle.set(' + str(LA.norm(rotVec)) + ');\n'
+		strToReturn += myNodeName + '.innerRotation.axis.set(' + \
+			str(rotVec[0]) + ',' + \
+			str(rotVec[1]) + ',' + \
+			str(rotVec[2]) + ');\n'
+
+		strToReturn += myNodeName + \
+			'.innerRotation.angle.set(' + str(LA.norm(rotVec)) + ');\n'
+
+		strToReturn += myNodeName + \
+			'.innerTranslation.vector.set('+ str(t[0]) + ',' + str(t[1]) + ',' + str(t[2]) + ');\n'
+
 
 		return strToReturn
 
@@ -592,7 +621,8 @@ class Cuboid(Primitive):
 		lines.append('\t\tCuboid {\n')
 		lines.append(''.join(
 			['\t\t\t', 'pmin ', str(self.min_point.x), ' ', str(self.min_point.y), ' ', str(self.min_point.z), '\n']))
-		lines.append(''.join(['\t\t\t', 'size ', str(self.side.x), ' ', str(self.side.y), ' ', str(self.side.z), '\n']))
+		lines.append(''.join(['\t\t\t', 'size ', str(self.side.x),
+                        ' ', str(self.side.y), ' ', str(self.side.z), '\n']))
 		lines.append('\t\t}\n')
 		lines.append('\t}\n')
 		lines.append('}\n')
@@ -633,7 +663,8 @@ class Cylinder(Primitive):
 
 		# rotation is sufficient to define transformations
 		# (no need to use translation given minPt and Side of Box)
-		r = R.from_euler('xyz', [self.euler_angles.x, self.euler_angles.y, self.euler_angles.z], degrees=False)
+		r = R.from_euler('xyz', [self.euler_angles.x,
+                           self.euler_angles.y, self.euler_angles.z], degrees=False)
 		rotVec = r.as_rotvec()
 
 		myNodeName = 'myNode' + str(globalIdx)
@@ -649,7 +680,8 @@ class Cylinder(Primitive):
 		strToReturn += myNodeName + '.innerRotation.center.set(0,0,0);\n'
 		strToReturn += myNodeName + '.innerRotation.axis.set(' + str(rotVec[0]) + ',' + str(rotVec[1]) + ',' + str(
 			rotVec[2]) + ');\n'
-		strToReturn += myNodeName + '.innerRotation.angle.set(' + str(LA.norm(rotVec)) + ');\n'
+		strToReturn += myNodeName + \
+			'.innerRotation.angle.set(' + str(LA.norm(rotVec)) + ');\n'
 
 		return strToReturn
 
@@ -671,7 +703,8 @@ class Cylinder(Primitive):
 		lines.append('\t\tCylinder {\n')
 		lines.append(''.join(
 			['\t\t\t', 'Center ', str(self.min_point.x), ' ', str(self.min_point.y), ' ', str(self.min_point.z), '\n']))
-		lines.append(''.join(['\t\t\t', 'Dir ', str(self.side.x), ' ', str(self.side.y), ' ', str(self.side.z), '\n']))
+		lines.append(''.join(['\t\t\t', 'Dir ', str(self.side.x),
+                        ' ', str(self.side.y), ' ', str(self.side.z), '\n']))
 		lines.append(''.join(['\t\t\t', 'Radius ', str(self.radius), '\n']))
 		lines.append('\t\t}\n')
 		lines.append('\t}\n')
@@ -769,27 +802,50 @@ class Union(Expression):
 		strToReturn = ''
 
 		for idx in range(len(self.exprs)):
+
+			nodeName0 = 'my' + expressionToStringID[self.exprs[0]].capitalize()
+			nodeName1 = 'my' + expressionToStringID[self.exprs[1]].capitalize()
+
 			if len(self.exprs) == 2:
-				strToReturn += 'const myNode' + str(globalIdx) + ' = object.addFuseOperation();\n'
-				strToReturn += myNodeName + '.leftArg.set(' + 'my' + expressionToStringID[
-					self.exprs[0]].capitalize() + ');\n'
-				strToReturn += myNodeName + '.rightArg.set(' + 'my' + expressionToStringID[
-					self.exprs[1]].capitalize() + ');\n'
-				break
+				if nodeName0 != nodeName1:
+					strToReturn += 'const myNode' + str(globalIdx) + ' = object.addFuseOperation();\n'
+					strToReturn += myNodeName + '.leftArg.set(' + nodeName0 + ');\n'
+					strToReturn += myNodeName + '.rightArg.set(' + nodeName1 + ');\n'
+					break
+				if nodeName0 == nodeName1:
+					strToReturn += 'const myNode' + str(globalIdx) + ' = ' + nodeName0 + '.clone();\n'
+					break
+				
+				strToReturn +='myNode' + str(globalIdx)+'.isVisible = false;\n'
+
 			else:
+
 				if idx < len(self.exprs) - 1:
-					strToReturn += 'const myNode' + str(globalIdx) + '_' + str(
-						idx + 1) + ' = object.addFuseOperation();\n'
+
 					if idx == 0:
-						strToReturn += 'myNode' + str(globalIdx) + '_' + str(
-							idx + 1) + '.leftArg.set(' + 'my' + expressionToStringID[
-							               self.exprs[idx]].capitalize() + ');\n'
+
+						linkToClone = 'my' + expressionToStringID[self.exprs[idx]].capitalize()
+						strToReturn += 'const myNode' + str(globalIdx) + '_' + str(idx + 1) + \
+                                                    ' = ' + linkToClone + '.clone();\n'
+						strToReturn +='myNode' + str(globalIdx) + '_' + str(idx + 1) +'.isVisible = false;\n'
+
 					else:
-						strToReturn += 'myNode' + str(globalIdx) + '_' + str(
-							idx + 1) + '.leftArg.set(' + 'myNode' + str(globalIdx) + '_' + str(idx) + ');\n'
-					strToReturn += 'myNode' + str(globalIdx) + '_' + str(idx + 1) + '.rightArg.set(' + 'my' + \
-					               expressionToStringID[
-						               self.exprs[idx]].capitalize() + ');\n'
+
+						leftArgLink = 'myNode' + str(globalIdx) + '_' + str(idx)
+						rightArgLink = 'my' + expressionToStringID[self.exprs[idx]].capitalize()
+
+						strToReturn += 'const myNode' + \
+							str(globalIdx) + '_' + str(idx + 1) + ' = object.addFuseOperation();\n'
+						strToReturn += 'myNode' + \
+                                                    str(globalIdx) + '_' + str(idx + 1) + \
+                                                    '.leftArg.set(' + \
+                                                    leftArgLink + ');\n'
+						strToReturn += 'myNode' + \
+                                                    str(globalIdx) + '_' + str(idx + 1) + \
+                                                    '.rightArg.set(' + \
+                                                    rightArgLink + ');\n'
+						strToReturn +='myNode' + str(globalIdx) + '_' + str(idx+ 1) +'.isVisible = false;\n'
+
 				else:
 					strToReturn += myNodeName + ' = object.addFuseOperation();\n'
 					strToReturn += 'myNode' + str(globalIdx) + '.leftArg.set(' + 'myNode' + str(globalIdx) + '_' + str(
@@ -797,6 +853,7 @@ class Union(Expression):
 					strToReturn += 'myNode' + str(globalIdx) + '.rightArg.set(' + 'my' + \
 					               expressionToStringID[
 						               self.exprs[idx]].capitalize() + ');\n'
+					strToReturn += 'myNode' +  str(globalIdx) + '.isVisible = false;\n'
 
 		# strToReturn += myNodeName + '.innerRotation.center.set(0,0,0);\n'
 		# strToReturn += myNodeName + '.innerRotation.axis.set(' + rotVec[0] + ',' + rotVec[1]+ ',' + rotVec[2] + ');\n'
@@ -849,8 +906,12 @@ class Intersection(Expression):
 			print("erreur")
 
 		strToReturn += myNodeName + ' = object.addCommonOperation();\n'
-		strToReturn += myNodeName + '.leftArg.set(' + 'my' + expressionToStringID[self.exprs[0]].capitalize() + ');\n'
-		strToReturn += myNodeName + '.rightArg.set(' + 'my' + expressionToStringID[self.exprs[1]].capitalize() + ');\n'
+		strToReturn += myNodeName + \
+                    '.leftArg.set(' + 'my' + \
+                    expressionToStringID[self.exprs[0]].capitalize() + ');\n'
+		strToReturn += myNodeName + \
+                    '.rightArg.set(' + 'my' + \
+                    expressionToStringID[self.exprs[1]].capitalize() + ');\n'
 
 		# strToReturn += myNodeName + '.innerRotation.center.set(0,0,0);\n'
 		# strToReturn += myNodeName + '.innerRotation.axis.set(' + rotVec[0] + ',' + rotVec[1]+ ',' + rotVec[2] + ');\n'
@@ -910,7 +971,8 @@ class Subtract(Expression):
 		lines.append('\tType internal\n')
 		lines.append('\tOperator subtract\n')
 		lines.append('\tnumChildren 2\n')
-		lines.append(''.join(['\tChild ', expressionToStringID[self.e1], ' ', expressionToStringID[self.e2], '\n']))
+		lines.append(''.join(['\tChild ', expressionToStringID[self.e1],
+                        ' ', expressionToStringID[self.e2], '\n']))
 		lines.append('}\n')
 		return lines
 
@@ -956,7 +1018,7 @@ def toGeometryEditor(globalIdx=None):
 	lines.append('/*FINAL CSG Conversion of Input Object*/\n')
 	lines.append(' \n')
 	for expression in expressionToStringID:
-    		
+
 		isVisible = globalIdx == len(expressionToStringID)-1
 		new_lines = expression.toGeometryEditor(globalIdx)
 
@@ -968,10 +1030,11 @@ def toGeometryEditor(globalIdx=None):
 		for line in new_lines:
 			lines.append('')
 			lines.append(line)
-			
-		lines.append('myNode'+str(globalIdx-1)+'.isVisible = '+str(isVisible))
+
+		lines.append('myNode'+str(globalIdx-1) +
+		             '.isVisible = '+str(isVisible).lower()+';')
 		lines.append('\n')
-		
+
 	lines.append('\n')
 	lines.append('\n')
 	lines.append('/*END Geometry Object Definition*/')
@@ -993,7 +1056,8 @@ def simplifyTree(expression):
 		return intersection
 
 	elif isinstance(expression, Subtract):
-		subtraction = SetSubtract(simplifyTree(expression.e1), simplifyTree(expression.e2))
+		subtraction = SetSubtract(simplifyTree(
+			expression.e1), simplifyTree(expression.e2))
 		if len(subtraction) == 1:
 			subtraction = subtraction.pop()
 		return subtraction
@@ -1092,4 +1156,3 @@ if __name__ == "__main__":
 
 	with open(geometryEditorJSONScriptFilename, 'w') as outfile:
 		outfile.write(str(geometryEditorObject))
-

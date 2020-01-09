@@ -54,13 +54,27 @@
 			YRotate 	90.00021045914971	
 			XRotate 	179.9998479605043	
 			Cylinder {
+				Center 0.129 -0.003 -0.093
+				Dir 0 0 1.944
+				Radius 1.854
+			}
+		}
+	}
+	node5 {
+		Type leaf
+		MaterialIndex 0
+		Transform {
+			ZRotate 	-90.00021045914971	
+			YRotate 	90.00021045914971	
+			XRotate 	179.9998479605043	
+			Cylinder {
 				Center 0.084 -0.005 0.921
 				Dir 0 0 17.279
 				Radius 2.289
 			}
 		}
 	}
-	node5 {
+	node6 {
 		Type leaf
 		MaterialIndex 0
 		Transform {
@@ -70,20 +84,6 @@
 			Cuboid {
 				pmin -2.315 -0.093 -4.745
 				size 4.63 18.293 4.662
-			}
-		}
-	}
-	node6 {
-		Type leaf
-		MaterialIndex 0
-		Transform {
-			ZRotate 	-90.00021045914971	
-			YRotate 	90.00021045914971	
-			XRotate 	179.9998479605043	
-			Cylinder {
-				Center 0.129 -0.003 -0.093
-				Dir 0 0 1.944
-				Radius 1.854
 			}
 		}
 	}
@@ -106,10 +106,9 @@
 			ZRotate 	0.0	
 			YRotate 	0.0	
 			XRotate 	0.0	
-			Cylinder {
-				Center 0.011 0.001 4.28205
-				Dir 0 0 0.4629
-				Radius 4.987
+			Cuboid {
+				pmin -2.31495 -0.09295 -4.74495
+				size 4.6299 1.0139 4.6619
 			}
 		}
 	}
@@ -120,9 +119,10 @@
 			ZRotate 	0.0	
 			YRotate 	0.0	
 			XRotate 	0.0	
-			Cuboid {
-				pmin -2.31495 -0.09295 -4.74495
-				size 4.6299 1.0139 4.6619
+			Cylinder {
+				Center 0.011 0.001 4.28205
+				Dir 0 0 0.4629
+				Radius 4.987
 			}
 		}
 	}

@@ -1,3 +1,5 @@
 /build/
 /CMakeFiles/
-/spot/
+/solution/spot/
+/solution/torus/
+/solution/torus_cube/
