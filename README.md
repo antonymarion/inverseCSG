@@ -9,8 +9,9 @@ Please find below screenshots of example 39 - Solution availables in solution fo
 ![box_vertices](meshlab_box.png)
 
 **150 items among following basic primitives (box,cylinder,sphere) and following boolean operation (fuse, common)**
+<p align="center">
 ![box_vertices](nodeOCC_box.png)
-
+</p>
 
 
 inversecsg code from paper https://dl.acm.org/citation.cfm?id=3275006 adapted to generate node-occ-csg-editor object script
