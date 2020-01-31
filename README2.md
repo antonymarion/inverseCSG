@@ -45,3 +45,12 @@ python sketch2CSGExperimental.py  inputFileInCSGSketchFormat csgInTreeFormatPath
 
 # Conversion d'un jeu de données solution au format node-occ
 ```python sketch2CSGInputFolder.py rootFolderOfCsgCppCommandBinary pathOfSolutionFolder```
+
+# Conversion d'un nuage de point en CSG
+```
+micmac tequila . . inputPointCloud.ply
+manifold_master -i input.ply -o manifold.ply
+convert manifold.ply into off 
+eventually filter isolated faces or vertices and remove duplicated faces/vertices with MeshLab
+python run.py build manifold
+```
