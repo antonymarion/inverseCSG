@@ -48,7 +48,7 @@ python sketch2CSGExperimental.py  inputFileInCSGSketchFormat csgInTreeFormatPath
 
 # Conversion d'un nuage de point en CSG
 ```
-micmac tequila . . inputPointCloud.ply
+micmac TiPunch inputPointCloud.ply
 manifold_master -i input.ply -o manifold.ply
 convert manifold.ply into off 
 eventually filter isolated faces or vertices and remove duplicated faces/vertices with MeshLab
