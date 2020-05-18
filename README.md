@@ -38,14 +38,8 @@ Please find below screenshots of example 39 - Solution available in solution fol
    <b> First List of tested models</b>
 </p>
 <p align="center">
-   <img width="400" src="https://github.com/antonymarion/inverseCSG/raw/master/benchmark.jpeg">
+   <img width="400" src="https://github.com/antonymarion/inverseCSG/raw/master/benchmark.jpg">
 </p>
-
-<p align="center">
-   <b> Second List of tested models</b>
-   NodeStep Samples
-</p>
-
 
 inversecsg code from paper https://dl.acm.org/citation.cfm?id=3275006 adapted to generate node-occ-csg-editor object script
 
