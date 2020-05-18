@@ -41,6 +41,27 @@ Screenshots of example 39 - Solution available in solution folder
    <img width="400" src="https://github.com/antonymarion/inverseCSG/raw/master/4_0.jpeg">
 </p>
 <p align="center">
+   <img width="400" src="https://github.com/antonymarion/inverseCSG/raw/master/0.jpeg">
+</p>
+<p align="center">
+   <img width="400" src="https://github.com/antonymarion/inverseCSG/raw/master/1.jpeg">
+</p>
+<p align="center">
+   <img width="400" src="https://github.com/antonymarion/inverseCSG/raw/master/2.jpeg">
+</p>
+<p align="center">
+   <img width="400" src="https://github.com/antonymarion/inverseCSG/raw/master/6.jpeg">
+</p>
+<p align="center">
+   <img width="400" src="https://github.com/antonymarion/inverseCSG/raw/master/3.jpeg">
+</p>
+<p align="center">
+   <img width="400" src="https://github.com/antonymarion/inverseCSG/raw/master/4.jpeg">
+</p>
+<p align="center">
+   <img width="400" src="https://github.com/antonymarion/inverseCSG/raw/master/5.jpeg">
+</p>
+<p align="center">
    <b> First List of tested models</b>
 </p>
 <p align="center">
