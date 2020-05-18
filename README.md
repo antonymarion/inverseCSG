@@ -1,8 +1,14 @@
 # inverseCSG
 [![Build Status](https://travis-ci.com/antonymarion/inverseCSG.svg?branch=master)](https://travis-ci.com/antonymarion/inverseCSG)
 
+The goal of this repo is to adapt the inverseCSG method to JS CAD Libs like node-occ
 
-Please find below screenshots of example 39 - Solution available in solution folder
+InverseCSG takes a tesselated mesh and computes a best CSG candidate.
+
+For more details please refer to https://dl.acm.org/citation.cfm?id=3275006
+
+
+Screenshots of example 39 - Solution available in solution folder
 
 
 <p align="center">
@@ -48,8 +54,6 @@ Please read the READMEs.
 original README gives the installation instructions.
 
 others give a sample pipeline from a 3D Mesh (off format) into a pure js node-occ script
-
-Some examples files from https://github.com/erossignon/node-STEP/tree/master/parts are included in the example folder for CI tests.
 
 Others papers+code freely available online:
 
