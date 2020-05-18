@@ -27,11 +27,18 @@ Please find below screenshots of example 39 - Solution available in solution fol
    <img width="400" src="https://github.com/antonymarion/inverseCSG/raw/master/nodeOCC_box_rear.png">
 </p>
 
+
+<p align="center">
+ <b>4 pure-csg objects from the inverseCSG results</b>
+</p>
+<p align="center">
+   <img width="400" src="https://github.com/antonymarion/inverseCSG/raw/master/4_0.jpeg">
+</p>
 <p align="center">
    <b> First List of tested models</b>
 </p>
 <p align="center">
-   <img width="400" src="https://github.com/antonymarion/inverseCSG/raw/master/benchmark.jpg">
+   <img width="400" src="https://github.com/antonymarion/inverseCSG/raw/master/benchmark.jpeg">
 </p>
 
 <p align="center">
