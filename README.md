@@ -40,6 +40,11 @@ Screenshots of example 39 - Solution available in solution folder
 <p align="center">
    <img width="400" src="https://github.com/antonymarion/inverseCSG/raw/master/4_0.jpeg">
 </p>
+
+<p align="center">
+ <b> others CSGs </b>
+</p>
+
 <p align="center">
    <img width="400" src="https://github.com/antonymarion/inverseCSG/raw/master/1.jpeg">
 </p>
