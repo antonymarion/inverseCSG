@@ -100,9 +100,9 @@ def InstallCGAL():
   helper.PrintWithGreenColor('Installed libcgal-dev')
 
 def InstallEigen():
-  helper.Run('wget http://bitbucket.org/eigen/eigen/get/3.3.4.zip')
+  helper.Run('wget https://gitlab.com/libeigen/eigen/-/archive/3.3.4/eigen-3.3.4.zip')
   cpp_lib_folder = os.path.join(root_folder, 'cpp', 'lib')
-  helper.Run('unzip 3.3.4.zip -d %s' % os.path.join(cpp_lib_folder))
+  helper.Run('unzip eigen-3.3.4.zip -d %s' % os.path.join(cpp_lib_folder))
   helper.Run('ls -latr')
   helper.Run('mv -f %s %s' % (os.path.join(cpp_lib_folder,'eigen-eigen-5a0156e40feb'), os.path.join(cpp_lib_folder, 'eigen-3.3.4')))
   helper.Run('rm 3.3.4.zip')
