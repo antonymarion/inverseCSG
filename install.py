@@ -104,7 +104,7 @@ def InstallEigen():
   cpp_lib_folder = os.path.join(root_folder, 'cpp', 'lib')
   helper.Run('unzip eigen-3.3.4.zip -d %s' % os.path.join(cpp_lib_folder))
   helper.Run('ls -latr')
-  helper.Run('mv -f %s %s' % (os.path.join(cpp_lib_folder,'eigen-eigen-5a0156e40feb'), os.path.join(cpp_lib_folder, 'eigen-3.3.4')))
+  helper.Run('mv -f %s %s' % (os.path.join(cpp_lib_folder,'eigen-3.3.4'), os.path.join(cpp_lib_folder, 'eigen-3.3.4')))
   helper.Run('rm 3.3.4.zip')
   helper.PrintWithGreenColor('Installed Eigen')
 
