@@ -6,7 +6,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-16.04, ubuntu-18.04]
-        include: 
+        include:
         - os: ubuntu-18.04
           TARGET: x86_64-unknown-linux-musl
           COMPILER: gcc
@@ -21,6 +21,7 @@ jobs:
      - name: installAndTest 16
        if: runner.os == 'ubuntu-16.04'
        run: |
+          python3 install.py -d ./build
           sudo apt-get update	
           cd solution && mkdir -p generated && ls -l */*.js | awk '{print $9}' | awk  -F  "/"  '{print $0,$1,$2}' | while read full dir file ; do cp "$full" generated/"$dir"_"$file"; done
           diff -q generated/ ../expectedNodeOCCJSScripts/
